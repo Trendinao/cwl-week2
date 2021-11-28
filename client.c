@@ -7,4 +7,10 @@
 #include <netinet/in.h>
 #include <sys/time.h>
 #include <unistd.h>
-#include <arpa/ine
+#include <arpa/inet.h>
+
+#define maxline 100
+//#define name_len 20
+
+char *EXIT_STRING = "exit";
+int tcp_connect(int af, char *se
