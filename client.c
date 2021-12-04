@@ -13,4 +13,8 @@
 //#define name_len 20
 
 char *EXIT_STRING = "exit";
-int tcp_connect(int af, char *se
+int tcp_connect(int af, char *servip, unsigned short port);
+void errquit(char *mesg){ perror(mesg); exit(1); }
+
+int main(int argc, char *argv[]){
+	
