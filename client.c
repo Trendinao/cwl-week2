@@ -17,4 +17,11 @@ int tcp_connect(int af, char *servip, unsigned short port);
 void errquit(char *mesg){ perror(mesg); exit(1); }
 
 int main(int argc, char *argv[]){
-	
+	char file_name[maxline];
+	int maxfdp1;
+	int s, nbyte, fd;
+	int namelen;
+	fd_set read_fds;
+
+	if(argc != 3){
+		printf("usag
