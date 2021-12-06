@@ -24,4 +24,9 @@ int main(int argc, char *argv[]){
 	fd_set read_fds;
 
 	if(argc != 3){
-		printf("usag
+		printf("usage : %s server_ip port filename\n", argv[0]);
+		exit(1);
+	}
+
+	s = tcp_connect(AF_INET, argv[1], atoi(argv[2]));
+	if(s == -1) errquit("
