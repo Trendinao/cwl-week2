@@ -29,4 +29,8 @@ int main(int argc, char *argv[]){
 	}
 
 	s = tcp_connect(AF_INET, argv[1], atoi(argv[2]));
-	if(s == -1) errquit("
+	if(s == -1) errquit("tcp_connect fail");
+	memset(file_name, 0x00, maxline);
+	//init file_name
+	puts("connect to server");
+	m
