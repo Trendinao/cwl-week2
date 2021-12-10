@@ -33,4 +33,10 @@ int main(int argc, char *argv[]){
 	memset(file_name, 0x00, maxline);
 	//init file_name
 	puts("connect to server");
-	m
+	maxfdp1 = s+1;
+	FD_ZERO(&read_fds);
+
+	while(1){
+		FD_SET(0, &read_fds);
+
+		if(select(maxfdp1, &read_fds, NULL, NULL, NULL) <
