@@ -42,4 +42,7 @@ int main(int argc, char *argv[]){
 		if(select(maxfdp1, &read_fds, NULL, NULL, NULL) <0) errquit("select fail");
 		if(FD_ISSET(0, &read_fds)){
 			if(fgets(file_name, maxline, stdin)){
-				//
+				//input file name to file_name
+				file_name[strlen(file_name)-1] = '\0';
+				
+				if(strstr(fi
