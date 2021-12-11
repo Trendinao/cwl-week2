@@ -45,4 +45,9 @@ int main(int argc, char *argv[]){
 				//input file name to file_name
 				file_name[strlen(file_name)-1] = '\0';
 				
-				if(strstr(fi
+				if(strstr(file_name, EXIT_STRING) != NULL){
+					puts("good bye");
+					close(s);
+					exit(0);
+				}
+				printf("file name
