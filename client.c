@@ -39,4 +39,7 @@ int main(int argc, char *argv[]){
 	while(1){
 		FD_SET(0, &read_fds);
 
-		if(select(maxfdp1, &read_fds, NULL, NULL, NULL) <
+		if(select(maxfdp1, &read_fds, NULL, NULL, NULL) <0) errquit("select fail");
+		if(FD_ISSET(0, &read_fds)){
+			if(fgets(file_name, maxline, stdin)){
+				//
