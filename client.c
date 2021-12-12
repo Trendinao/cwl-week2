@@ -50,4 +50,6 @@ int main(int argc, char *argv[]){
 					close(s);
 					exit(0);
 				}
-				printf("file name
+				printf("file name is %s...\n", file_name);
+				
+				if(send(s, file_name, maxline, 0) < 0) puts("erre : send error
