@@ -59,4 +59,7 @@ int main(int argc, char *argv[]){
 				
 				sleep(1);
 				printf("sending...\n");
-				me
+				memset(file_name, 0x00, maxline);
+				nbyte = read(fd, file_name, maxline);
+				//read from open file
+				send(s, file
