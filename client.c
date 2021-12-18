@@ -54,4 +54,9 @@ int main(int argc, char *argv[]){
 				
 				if(send(s, file_name, maxline, 0) < 0) puts("erre : send error on select");
 				//send file_name to server
-				if((fd = open(file_name, O_RDONLY)) < 0) perror("open source file err
+				if((fd = open(file_name, O_RDONLY)) < 0) perror("open source file error :") ;
+				//open file using file_name
+				
+				sleep(1);
+				printf("sending...\n");
+				me
