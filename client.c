@@ -62,4 +62,12 @@ int main(int argc, char *argv[]){
 				memset(file_name, 0x00, maxline);
 				nbyte = read(fd, file_name, maxline);
 				//read from open file
-				send(s, file
+				send(s, file_name, nbyte, 0);
+				//send file data to server
+				if(nbyte == 0) break;
+			}
+		}
+	}
+}
+
+int tcp_connect(int af, 
