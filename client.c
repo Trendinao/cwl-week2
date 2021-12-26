@@ -70,4 +70,8 @@ int main(int argc, char *argv[]){
 	}
 }
 
-int tcp_connect(int af, 
+int tcp_connect(int af, char *servip, unsigned short port){
+	struct sockaddr_in servaddr;
+	int s;
+
+	if((s = socket(af
