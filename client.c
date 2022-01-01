@@ -74,4 +74,7 @@ int tcp_connect(int af, char *servip, unsigned short port){
 	struct sockaddr_in servaddr;
 	int s;
 
-	if((s = socket(af
+	if((s = socket(af, SOCK_STREAM, 0)) <0) return -1;
+
+	bzero((char*)&servaddr, sizeof(servaddr));
+	servaddr.sin_family
