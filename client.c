@@ -81,4 +81,7 @@ int tcp_connect(int af, char *servip, unsigned short port){
 	inet_pton(AF_INET, servip, &servaddr.sin_addr);
 	servaddr.sin_port = htons(port);
 
-	if(connect(s, (struct so
+	if(connect(s, (struct sockaddr*)&servaddr, sizeof(servaddr)) <0) return -1;
+	return s;
+}
+
