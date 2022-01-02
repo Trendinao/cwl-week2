@@ -1,1 +1,1 @@
-add_library(fibolib fibo.
+add_library(fibolib fibo.cpp)
