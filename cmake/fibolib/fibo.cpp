@@ -11,3 +11,11 @@ void Fibonacci::calculate(){
 	else{
 		for(i=3; i<=n; i++){
 			third = first + second;
+			first = second;
+			second = third;
+		}
+	}
+}
+
+void Fibonacci::print_info(){
+	cout << "fibonacci(" << n << ") is " << t
