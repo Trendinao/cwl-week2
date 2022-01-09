@@ -18,4 +18,6 @@ void Fibonacci::calculate(){
 }
 
 void Fibonacci::print_info(){
-	cout << "fibonacci(" << n << ") is " << t
+	cout << "fibonacci(" << n << ") is " << third << endl;
+}
+
