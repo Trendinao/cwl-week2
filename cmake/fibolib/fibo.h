@@ -6,4 +6,9 @@ private:
 public:
 	Fibonacci(int n):n(n){}
 
-	
+	~Fibonacci(){}
+
+	void calculate();
+
+	void print_info();
+};
