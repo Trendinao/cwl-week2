@@ -8,4 +8,13 @@ int main(){
 	cout << "enter the fibonacci(n). (n>=1)" << endl;
 	cin >> ans;
 
-	Fibonacc
+	Fibonacci fibo(ans);
+
+	fibo.calculate();
+	fibo.print_info();
+
+	return 0;
+
+}
+
+
