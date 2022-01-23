@@ -1,2 +1,8 @@
 #include <stdlib.h>
-#i
+#include "fs.h"
+#include "disk.h"
+#include "validate.h"
+#include <assert.h>
+#include <stdio.h>
+
+#define INODE_
