@@ -17,4 +17,10 @@ void testcase1(void)
 	
 	for(i=0; i < TOTAL_BLOCK_NUM;i++)
 	{
-		if(i%4==
+		if(i%4==3)
+		{
+			SetBlockBitmap(i);
+			
+			if(vGetBitValue(BLOCK_BITMAP_BLK_NUM, i)==1)
+			{
+				printf("Success about SetB
