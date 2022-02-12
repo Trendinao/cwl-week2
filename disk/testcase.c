@@ -23,4 +23,15 @@ void testcase1(void)
 			
 			if(vGetBitValue(BLOCK_BITMAP_BLK_NUM, i)==1)
 			{
-				printf("Success about SetB
+				printf("Success about SetBlockBitmap().\n");
+			}
+			else
+			{
+				printf("Fail about SetBlockBitmap().\n");
+				return;
+			}
+			
+		}
+	}
+	
+	fo
