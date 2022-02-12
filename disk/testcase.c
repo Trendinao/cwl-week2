@@ -8,4 +8,13 @@
 #define INODE_SIZE (64)
 #define NUM_INODE_PER_BLOCK (BLOCK_SIZE/INODE_SIZE)	// 512/64 = 8
 #define TOTAL_INODE_NUM (NUM_INODE_PER_BLOCK * INODELIST_BLKS) 	// 8 * 4 = 32
-#define TOTAL_BLOCK_NUM (TOTAL_INODE_NUM)	
+#define TOTAL_BLOCK_NUM (TOTAL_INODE_NUM)	//32
+
+void testcase1(void)
+{
+	int i =0;
+	FileSysInit();
+	
+	for(i=0; i < TOTAL_BLOCK_NUM;i++)
+	{
+		if(i%4==
