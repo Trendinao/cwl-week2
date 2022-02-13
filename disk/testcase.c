@@ -34,4 +34,10 @@ void testcase1(void)
 		}
 	}
 	
-	fo
+	for(i=0;i<TOTAL_BLOCK_NUM;i++)
+	{
+		if(i%8==7)
+		{
+			ResetBlockBitmap(i);
+			
+			if(vGetBitValue(BLOCK_BI
