@@ -57,4 +57,11 @@ void testcase1(void)
 }
 
 
-void testcase2(v
+void testcase2(void)
+{
+	int i=0;
+	int BitValue =0;
+	
+	FileSysInit();
+	
+	for(i=0;i<TOTAL_BLOCK_NUM;i+
