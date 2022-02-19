@@ -40,4 +40,10 @@ void testcase1(void)
 		{
 			ResetBlockBitmap(i);
 			
-			if(vGetBitValue(BLOCK_BI
+			if(vGetBitValue(BLOCK_BITMAP_BLK_NUM,i)==0)
+			{
+				printf("Success about ResetBlockBitmap().\n");
+			}
+			else
+			{
+				printf("Fail about R
