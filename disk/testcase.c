@@ -46,4 +46,15 @@ void testcase1(void)
 			}
 			else
 			{
-				printf("Fail about R
+				printf("Fail about ResetBlockBitmap().\n");
+				return;
+			}
+			
+		}
+	}
+	
+	printf("Testcase 1 Complete!\n");
+}
+
+
+void testcase2(v
