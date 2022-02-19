@@ -64,4 +64,13 @@ void testcase2(void)
 	
 	FileSysInit();
 	
-	for(i=0;i<TOTAL_BLOCK_NUM;i+
+	for(i=0;i<TOTAL_BLOCK_NUM;i++)
+	{
+		SetBlockBitmap(i);
+	}
+	
+	for(i=0;i<TOTAL_BLOCK_NUM;i++)
+	{
+		if(i%8==7)
+		{
+			ResetBlockBit
