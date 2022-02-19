@@ -73,4 +73,8 @@ void testcase2(void)
 	{
 		if(i%8==7)
 		{
-			ResetBlockBit
+			ResetBlockBitmap(i);
+			if(i== GetFreeBlockNum())
+			{
+				
+				if(vGetBitValue(BLOCK_BITMAP_BLK_NUM,i)==0)
