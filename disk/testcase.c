@@ -78,3 +78,6 @@ void testcase2(void)
 			{
 				
 				if(vGetBitValue(BLOCK_BITMAP_BLK_NUM,i)==0)
+				{
+					BitValue = vGetBitValue(BLOCK_BITMAP_BLK_NUM,i);
+					printf("Reseult of GetFreeBlockNum() : %d ,
