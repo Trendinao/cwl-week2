@@ -82,4 +82,12 @@ void testcase2(void)
 					BitValue = vGetBitValue(BLOCK_BITMAP_BLK_NUM,i);
 					printf("Reseult of GetFreeBlockNum() : %d ,	The Value of Bit %d : %d \n", GetFreeBlockNum(), GetFreeBlockNum(), BitValue);
 					SetBlockBitmap(i);
+				}
+				else
+				{
+					printf("Fail : The Value of Bit %d is not 0.\n",GetFreeBlockNum());
+					return;
+				}
+				
+			}
 		
