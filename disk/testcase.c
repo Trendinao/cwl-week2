@@ -90,4 +90,12 @@ void testcase2(void)
 				}
 				
 			}
-		
+			else
+			{
+				printf("Fail : GetFreeBlockNum() is incorrect!\n");
+				return;
+			}
+		}
+	}
+	
+	printf("Te
