@@ -98,4 +98,15 @@ void testcase2(void)
 		}
 	}
 	
-	printf("Te
+	printf("TestCase 2 Complete!\n");
+}
+
+
+void testcase3(void)
+{
+	int i =0;
+	FileSysInit();
+	
+	for(i=0; i < TOTAL_INODE_NUM;i++)
+	{
+		i
