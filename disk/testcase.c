@@ -109,4 +109,10 @@ void testcase3(void)
 	
 	for(i=0; i < TOTAL_INODE_NUM;i++)
 	{
-		i
+		if(i%4==3)
+		{
+			SetInodeBitmap(i);
+			
+			if(vGetBitValue(INODE_BITMAP_BLK_NUM, i)==1)
+			{
+				printf("Success about SetIno
