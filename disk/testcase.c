@@ -115,4 +115,14 @@ void testcase3(void)
 			
 			if(vGetBitValue(INODE_BITMAP_BLK_NUM, i)==1)
 			{
-				printf("Success about SetIno
+				printf("Success about SetInodeBitmap().\n");
+			}
+			else
+			{
+				printf("Fail about SetInodeBitmap().\n");
+				return;
+			}
+			
+		}
+	}
+	
