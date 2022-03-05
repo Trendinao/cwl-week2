@@ -126,3 +126,10 @@ void testcase3(void)
 		}
 	}
 	
+	for(i=0;i<TOTAL_INODE_NUM;i++)
+	{
+		if(i%8==7)
+		{
+			ResetInodeBitmap(i);
+			
+			
