@@ -132,4 +132,10 @@ void testcase3(void)
 		{
 			ResetInodeBitmap(i);
 			
-			
+			if(vGetBitValue(INODE_BITMAP_BLK_NUM,i)==0)
+			{
+				printf("Success about ResetInodeBitmap().\n");
+			}
+			else
+			{
+		
