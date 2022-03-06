@@ -138,4 +138,15 @@ void testcase3(void)
 			}
 			else
 			{
-		
+				printf("Fail about ResetInodeBitmap().\n");
+				return;
+			}
+			
+		}
+	}
+	
+	printf("Testcase 3 Complete!\n");
+
+}
+
+void 
