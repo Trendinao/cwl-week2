@@ -149,4 +149,13 @@ void testcase3(void)
 
 }
 
-void 
+void testcase4(void)
+{
+	int i=0;
+	int BitValue =0;
+	FileSysInit();
+	
+	for(i=0;i<TOTAL_INODE_NUM;i++)
+	{
+		SetInodeBitmap(i);
+	}
