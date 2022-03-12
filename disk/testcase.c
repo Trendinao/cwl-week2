@@ -167,3 +167,8 @@ void testcase4(void)
 			ResetInodeBitmap(i);
 			if(i== GetFreeInodeNum())
 			{
+				
+				if(vGetBitValue(INODE_BITMAP_BLK_NUM,i)==0 )
+				{
+					BitValue = vGetBitValue(INODE_BITMAP_BLK_NUM,i);
+			
