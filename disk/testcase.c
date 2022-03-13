@@ -171,4 +171,4 @@ void testcase4(void)
 				if(vGetBitValue(INODE_BITMAP_BLK_NUM,i)==0 )
 				{
 					BitValue = vGetBitValue(INODE_BITMAP_BLK_NUM,i);
-			
+					printf("Reseult of GetFreeInodeNum() : %d ,	The Value of Bit %d : %d \n", GetFreeInodeNum(), GetFreeInodeNum(), BitValu
