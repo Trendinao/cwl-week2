@@ -176,4 +176,11 @@ void testcase4(void)
 				}
 				else
 				{
-					printf("Fail : The Value of Bit %d is not 0.\n",GetF
+					printf("Fail : The Value of Bit %d is not 0.\n",GetFreeInodeNum());
+					return;
+				}
+				
+			}
+			else
+			{
+				printf("Fail : GetFreeInodeNum() is incorrect!\n");
