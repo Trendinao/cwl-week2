@@ -184,3 +184,15 @@ void testcase4(void)
 			else
 			{
 				printf("Fail : GetFreeInodeNum() is incorrect!\n");
+				return;
+			}
+		}
+	}	
+	printf("TestCase 4 Complete!\n");
+}
+
+void testcase5(void)
+{
+    FileSysInit();
+    int i =0;
+    
