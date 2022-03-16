@@ -199,4 +199,9 @@ void testcase5(void)
     
     Inode * pInode = (Inode*)malloc(sizeof(Inode));
     Inode * pTmpInode = (Inode*)malloc(sizeof(Inode));
- 
+    for(i=0;i<TOTAL_INODE_NUM;i++)
+    {
+        if(i%2==1)
+        {
+            pInode->allocBlocks = i;
+            p
