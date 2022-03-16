@@ -196,3 +196,7 @@ void testcase5(void)
     FileSysInit();
     int i =0;
     
+    
+    Inode * pInode = (Inode*)malloc(sizeof(Inode));
+    Inode * pTmpInode = (Inode*)malloc(sizeof(Inode));
+ 
