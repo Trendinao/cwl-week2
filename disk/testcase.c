@@ -204,4 +204,8 @@ void testcase5(void)
         if(i%2==1)
         {
             pInode->allocBlocks = i;
-            p
+            pInode->blockPointer[2]=i;
+            pInode->blockPointer[11]=i;
+
+            PutInode(i,pInode);
+               vGetInodeVa
