@@ -208,4 +208,8 @@ void testcase5(void)
             pInode->blockPointer[11]=i;
 
             PutInode(i,pInode);
-               vGetInodeVa
+               vGetInodeValue(i, pTmpInode); 
+
+			
+            if(pTmpInode->allocBlocks == pInode->allocBlocks 
+            && pTmpInode->bloc
