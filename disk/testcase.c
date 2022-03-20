@@ -219,4 +219,11 @@ void testcase5(void)
             }
             else
             {
-                printf("TestCase 5: PutInode
+                printf("TestCase 5: PutInode Failed!\n");
+                return;
+            }
+           
+        }
+    }
+
+    for(i=0;i<TOTAL_INODE_NUM;i
