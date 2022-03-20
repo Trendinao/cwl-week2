@@ -212,4 +212,6 @@ void testcase5(void)
 
 			
             if(pTmpInode->allocBlocks == pInode->allocBlocks 
-            && pTmpInode->bloc
+            && pTmpInode->blockPointer[2] == pInode->blockPointer[2]
+            && pTmpInode->blockPointer[11]== pInode->blockPointer[11] )
+    
