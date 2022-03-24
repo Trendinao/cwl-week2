@@ -226,4 +226,9 @@ void testcase5(void)
         }
     }
 
-    for(i=0;i<TOTAL_INODE_NUM;i
+    for(i=0;i<TOTAL_INODE_NUM;i++)
+    {
+        if(i%2==1)
+        {
+            GetInode(i,pInode);
+               vGetInodeValue(i, pTmpInode); 
