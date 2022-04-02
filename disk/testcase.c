@@ -232,3 +232,7 @@ void testcase5(void)
         {
             GetInode(i,pInode);
                vGetInodeValue(i, pTmpInode); 
+
+			
+           if(pTmpInode->allocBlocks == pInode->allocBlocks
+                && pTmpInode->blockPointer[2
