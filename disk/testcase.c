@@ -242,4 +242,12 @@ void testcase5(void)
             }
             else
             {
-                printf("TestCase 5 Fail!
+                printf("TestCase 5 Fail!\n");
+            }
+            
+        }
+    }
+    printf("Testcase 5 Complete!\n");
+}
+
+int main(int argc, char* argv[])
