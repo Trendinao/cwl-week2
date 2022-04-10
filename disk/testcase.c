@@ -251,3 +251,12 @@ void testcase5(void)
 }
 
 int main(int argc, char* argv[])
+{
+	int tcNum;
+	if(argc != 2)
+	{
+		perror("Input TestCase Number!");
+		exit(0);
+	}
+	
+	tcNum = atoi(argv[1]);
