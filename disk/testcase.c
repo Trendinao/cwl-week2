@@ -260,3 +260,15 @@ int main(int argc, char* argv[])
 	}
 	
 	tcNum = atoi(argv[1]);
+	
+	switch(tcNum)
+	{
+		case 1:
+			testcase1();
+			break;
+		case 2:
+			testcase2();
+			break;
+		case 3:
+			testcase3();
+			br
