@@ -271,4 +271,14 @@ int main(int argc, char* argv[])
 			break;
 		case 3:
 			testcase3();
-			br
+			break;
+		case 4:
+			testcase4();
+			break;
+		case 5:
+			testcase5();
+			break;
+	}
+	
+	return 0;
+}
