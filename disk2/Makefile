@@ -4,4 +4,9 @@ SRCS = $(OBJECTS:.o=.c)
 
 CC = gcc
 CFLAGS = -g -c
-.SUFFI
+.SUFFIXES : .c .o
+
+$(TARGET) : $(OBJECTS) 
+	$(CC) -g -pthread $(OBJECTS) -o $@ -lm
+testcase.o : testcase.c fs.h
+#	$(CC) $(
