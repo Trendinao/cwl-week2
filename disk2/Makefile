@@ -16,4 +16,7 @@ fs.o : fs.c fs.h Matrix.h
 
 Matrix.o : Matrix.c Matrix.h
 
-moun
+mount.o : mount.c
+
+clean : 
+	rm $(OBJECTS)
