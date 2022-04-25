@@ -9,4 +9,11 @@ CFLAGS = -g -c
 $(TARGET) : $(OBJECTS) 
 	$(CC) -g -pthread $(OBJECTS) -o $@ -lm
 testcase.o : testcase.c fs.h
-#	$(CC) $(
+#	$(CC) $(CFLAGS) $*.c -o $@
+disk.o : disk.c disk.h
+
+fs.o : fs.c fs.h Matrix.h
+
+Matrix.o : Matrix.c Matrix.h
+
+moun
