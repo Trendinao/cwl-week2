@@ -2,4 +2,10 @@
 #include <string.h>
 
 typedef struct{
-	c
+	char** array;
+	size_t used;
+	size_t capa;
+} Matrix;
+
+void initMatrix(Matrix* m, size_t initCapa);
+void insertMat
