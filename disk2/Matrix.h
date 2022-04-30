@@ -8,4 +8,6 @@ typedef struct{
 } Matrix;
 
 void initMatrix(Matrix* m, size_t initCapa);
-void insertMat
+void insertMatrix(Matrix* m, char* element);
+void printMatrix(Matrix* m);
+void freeMatrix(Matrix* m);
