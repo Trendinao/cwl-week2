@@ -11,4 +11,8 @@ int main(){
 	printf("enter the matrix row and column\n");
 	scanf("%d %d", &row, &column);
 	
-	//assign the memory for matrix and set the mat
+	//assign the memory for matrix and set the matrix with 1
+	char **matrix = (char **)malloc(row * sizeof(char*));
+	
+	for(i=0; i<row; i++){	
+		ma
