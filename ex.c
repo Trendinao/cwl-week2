@@ -8,4 +8,7 @@ int main(){
 	//input matrix's row and column
 	int i = 0, j = 0;
 	int row = 0, column = 0;
-	printf("enter the matrix
+	printf("enter the matrix row and column\n");
+	scanf("%d %d", &row, &column);
+	
+	//assign the memory for matrix and set the mat
