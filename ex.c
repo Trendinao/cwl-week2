@@ -15,4 +15,8 @@ int main(){
 	char **matrix = (char **)malloc(row * sizeof(char*));
 	
 	for(i=0; i<row; i++){	
-		ma
+		matrix[i] = (char *)malloc(column * sizeof(char));
+		memset(matrix[i], 1, column* sizeof(char));
+	}
+
+	pri
