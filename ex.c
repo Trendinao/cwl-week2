@@ -19,4 +19,10 @@ int main(){
 		memset(matrix[i], 1, column* sizeof(char));
 	}
 
-	pri
+	print_matrix(matrix, row, column);
+
+	while(1){
+		//input i,j to add 1
+		i=0, j=0;
+		printf("-----------------------\n");
+		prin
