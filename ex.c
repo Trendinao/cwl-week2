@@ -25,4 +25,9 @@ int main(){
 		//input i,j to add 1
 		i=0, j=0;
 		printf("-----------------------\n");
-		prin
+		printf("enter the i, j to add 1\n");
+		scanf("%d %d", &i, &j);
+		fflush(stdout);
+
+		//if input is out of mtrix index
+		if(i>row || j>co
