@@ -30,4 +30,12 @@ int main(){
 		fflush(stdout);
 
 		//if input is out of mtrix index
-		if(i>row || j>co
+		if(i>row || j>column){
+			for(i=0; i<row; i++){
+				free(matrix[i]);
+			}
+			free(matrix);
+			break;
+		}
+
+		//add 1 at
