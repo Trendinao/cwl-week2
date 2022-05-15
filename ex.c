@@ -38,4 +38,9 @@ int main(){
 			break;
 		}
 
-		//add 1 at
+		//add 1 at matrix[i,j]
+		matrix[i][j] += 1;
+		
+		//if entry is bigger than 2
+		if(matrix[i][j] > 2){
+			matrix[i][j] = -2;
