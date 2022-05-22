@@ -44,3 +44,12 @@ int main(){
 		//if entry is bigger than 2
 		if(matrix[i][j] > 2){
 			matrix[i][j] = -2;
+		}
+
+		print_matrix(matrix, row, column);
+	}
+
+	return 0;
+}
+
+void print_matrix(char **p_matrix, int p_row, i
