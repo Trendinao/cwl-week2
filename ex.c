@@ -52,4 +52,10 @@ int main(){
 	return 0;
 }
 
-void print_matrix(char **p_matrix, int p_row, i
+void print_matrix(char **p_matrix, int p_row, int p_column){
+	//print defalt matrix
+	int i=0, j=0;
+
+	for(i=0; i<p_row ; i++){
+		for(j=0; j<p_column; j++){
+			p
