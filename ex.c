@@ -58,4 +58,9 @@ void print_matrix(char **p_matrix, int p_row, int p_column){
 
 	for(i=0; i<p_row ; i++){
 		for(j=0; j<p_column; j++){
-			p
+			printf("%2d ", p_matrix[i][j]);
+		}
+		printf("\n");
+	}
+	
+}
