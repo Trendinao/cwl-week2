@@ -11,4 +11,11 @@
 int main(int argc, char **argv){
 	int i, n, c_status;
 	
-	printf("enter the number of son process\n")
+	printf("enter the number of son process\n");
+	scanf("%d",&n);
+	
+	pid_t pid[n];
+
+	for(i = 0; i < n; i++){
+		if((pid[i] = fork()) == 0){
+			exit(100+i);
