@@ -6,4 +6,9 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <sys/types.h>
-#in
+#include <sys/wait.h>
+
+int main(int argc, char **argv){
+	int i, n, c_status;
+	
+	printf("enter the number of son process\n")
