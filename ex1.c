@@ -25,3 +25,5 @@ int main(int argc, char **argv){
 	for(i = 0; i < n; i++){
 		pid_t wpid = waitpid(pid[i], &c_status, 0);
 		printf("%d is waiting %d\n",getpid(), pid[i]);
+		if(WIFEXITED(c_status)){
+			printf("parent : %d, child : %d, status %d\n", getpid(), wpid, WEXITSTATU
