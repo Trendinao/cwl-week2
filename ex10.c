@@ -2,4 +2,9 @@
 #include <unistd.h>
 #include <pthread.h>
 
-int ncount
+int ncount;
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+void* do_loop(void *data){
+	int i;
+	for(i = 0; i < 10; i++
