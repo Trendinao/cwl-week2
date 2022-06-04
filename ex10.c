@@ -13,4 +13,12 @@ void* do_loop(void *data){
 		ncount++;
 		if(i == 10) return;
 
-		pthrea
+		pthread_mutex_unlock(&mutex);
+		sleep(1);
+	}
+}
+
+void* do_loop2(void *data){
+	int i;
+	for(i = 0; i < 10; i++){
+		pthread_mutex_lock(&mu
