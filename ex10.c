@@ -21,4 +21,12 @@ void* do_loop(void *data){
 void* do_loop2(void *data){
 	int i;
 	for(i = 0; i < 10; i++){
-		pthread_mutex_lock(&mu
+		pthread_mutex_lock(&mutex);
+		printf("loop2 : %d\n", ncount);
+		ncount++;
+		pthread_mutex_unlock(&mutex);
+		sleep(2);
+	}
+}
+
+int m
