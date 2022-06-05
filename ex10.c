@@ -36,4 +36,6 @@ int main(){
 	int a = 1;
 
 	ncount = 0;
-	thr_id = pthread_create(&p_t
+	thr_id = pthread_create(&p_thread[0], NULL, do_loop, (void*)&a);
+	sleep(1);
+	thr_id = pthread_create(&p_thread[1], NULL, do_loop2, (void*)&a);
