@@ -29,4 +29,11 @@ void* do_loop2(void *data){
 	}
 }
 
-int m
+int main(){
+	int thr_id;
+	pthread_t p_thread[2];
+	int status;
+	int a = 1;
+
+	ncount = 0;
+	thr_id = pthread_create(&p_t
