@@ -43,4 +43,9 @@ int main(){
 	pthread_join(p_thread[0], (void*)&status);
 	pthread_join(p_thread[1], (void*)&status);
 
-	
+	status = pthread_mutex_destroy(&mutex);
+
+	printf("code = %d\n", status);
+	printf("programing is end\n");
+
+	return
