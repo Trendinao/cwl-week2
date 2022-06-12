@@ -48,4 +48,6 @@ int main(){
 	printf("code = %d\n", status);
 	printf("programing is end\n");
 
-	return
+	return 0;
+}
+
