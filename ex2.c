@@ -8,4 +8,9 @@
 
 int copy_file(const char* name1, const char* name2){
 	int infile, outfile;
-	ssize_t nread, nwrite
+	ssize_t nread, nwrite;
+	char buf[BUF_SIZE];
+	memset(buf, 0, BUF_SIZE);
+
+	if((infile = open(name1, O_RDONLY)) < 0){
+		p
