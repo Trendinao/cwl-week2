@@ -13,4 +13,9 @@ int copy_file(const char* name1, const char* name2){
 	memset(buf, 0, BUF_SIZE);
 
 	if((infile = open(name1, O_RDONLY)) < 0){
-		p
+		perror("can't open the infile!");
+		return(-1);
+	}
+	
+	if((outfile = open(name2, O_WRONLY|O_CREAT|O_APPEND, PERM)) < 0){
+	
