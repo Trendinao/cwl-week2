@@ -18,4 +18,9 @@ int copy_file(const char* name1, const char* name2){
 	}
 	
 	if((outfile = open(name2, O_WRONLY|O_CREAT|O_APPEND, PERM)) < 0){
-	
+		perror("can't open the outfile!");
+		return(-2);
+	}
+
+	while((nread = read(infile, buf, BUF_SIZE)) > 0){
+		if((nwrite = writ
