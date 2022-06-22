@@ -28,3 +28,12 @@ int copy_file(const char* name1, const char* name2){
 			close(infile);
 			close(outfile);
 			return -3;
+		}
+	}
+	printf("nread = %ld, nwrite = %ld\n", nread, nwrite);
+
+	close(infile);
+	close(outfile);
+
+	if(nwrite < 0){
+		
