@@ -23,4 +23,8 @@ int copy_file(const char* name1, const char* name2){
 	}
 
 	while((nread = read(infile, buf, BUF_SIZE)) > 0){
-		if((nwrite = writ
+		if((nwrite = write(outfile, buf, nread)) < nread){
+			perror("can't write to outfile!");
+			close(infile);
+			close(outfile);
+			return -3;
