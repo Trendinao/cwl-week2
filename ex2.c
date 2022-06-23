@@ -36,4 +36,14 @@ int copy_file(const char* name1, const char* name2){
 	close(outfile);
 
 	if(nwrite < 0){
-		
+		perror("can't write to outfile!");
+		return -4;
+	}
+	else{
+		return 0;
+	}
+}
+
+
+int main(int argc, char* argv[]){
+	
