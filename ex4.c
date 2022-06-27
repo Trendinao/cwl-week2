@@ -16,3 +16,6 @@ int main(){
 	while(1){
 		printf("working %d\n",n++);
 		sleep(1);
+	}
+}
+
