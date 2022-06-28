@@ -17,4 +17,9 @@ int main(){
 		char buf[100];
 		close(fd[1]);
 		read(fd[0], buf, 100);
-		printf("Child rece
+		printf("Child received message : %s\n", buf);
+		fflush(stdout);
+	}
+	exit(0);
+}
+
