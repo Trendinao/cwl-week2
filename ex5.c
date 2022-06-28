@@ -11,4 +11,10 @@ int main(){
 
 	if(fork()){ //parent process
 		close(fd[0]);
-		write
+		write(fd[1], "How are you?", 12);
+	}
+	else{
+		char buf[100];
+		close(fd[1]);
+		read(fd[0], buf, 100);
+		printf("Child rece
