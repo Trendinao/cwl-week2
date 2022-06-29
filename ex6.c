@@ -48,3 +48,39 @@ static int set_handler(){
 
 	if(sigaction(SIGALRM, &act1, NULL) == -1) return -1;
 	if(sigaction(SIGINT, &act2, NULL) == -1) return -1;
+
+	return 0;
+}
+
+static int setperiodic(){
+	struct itimerspec value1, value2;
+
+	if(timer_create(CLOCK_REALTIME, NULL, &timerid) == -1) return -1;
+
+	value1.it_interval.tv_sec = 1;
+	value1.it_interval.tv_nsec = 0;
+	
+	value1.it_value.tv_sec = 2;
+	value1.it_value.tv_nsec = 0;
+	
+	timer_settime(timerid, 0, &value1, NULL);
+	printf("initial interval is %ld\n", value1.it_interval.tv_sec);	
+}
+
+int main(){
+	if(set_handler() == -1){ 
+		perror("failed to setup SIGARLM handler"); 
+		return 1; 
+	}
+	if(setperiodic() == -1){ 
+		perror("failed to setup timer"); 
+		return 1; 
+	}
+	
+	while(1){
+		pause();
+	}
+
+	return 0;
+}
+
