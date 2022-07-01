@@ -8,4 +8,9 @@
 
 #define BUFSIZE 256
 
-int m
+int main(int argc, char *argv[]){
+	int fd, nread;
+	char buf[BUFSIZE];
+
+	//if arguments is miss match
+	if(argc != 2) f
