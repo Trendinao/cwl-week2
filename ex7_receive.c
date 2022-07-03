@@ -17,4 +17,11 @@ int main(int argc, char *argv[]){
 
 	//if failed to open FIFO
 	if((fd = open(argv[1], O_RDONLY)) < 0){
-		perror(
+		perror("failed to open FIFO ");
+		return 0;
+	}
+	
+	//roop until message is "quit"
+	do{
+		//if failed to read FIFO
+		if((nread = read
