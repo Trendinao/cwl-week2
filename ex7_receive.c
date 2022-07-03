@@ -13,4 +13,8 @@ int main(int argc, char *argv[]){
 	char buf[BUFSIZE];
 
 	//if arguments is miss match
-	if(argc != 2) f
+	if(argc != 2) fprintf(stderr, "usage : %s fifoname\n", argv[0]);
+
+	//if failed to open FIFO
+	if((fd = open(argv[1], O_RDONLY)) < 0){
+		perror(
