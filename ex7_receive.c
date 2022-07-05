@@ -24,4 +24,9 @@ int main(int argc, char *argv[]){
 	//roop until message is "quit"
 	do{
 		//if failed to read FIFO
-		if((nread = read
+		if((nread = read(fd, buf, BUFSIZE)) < 0) perror("failed to read ");
+
+		//print message
+		printf("%s",buf);
+
+		//if message is "
