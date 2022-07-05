@@ -29,4 +29,11 @@ int main(int argc, char *argv[]){
 		//print message
 		printf("%s",buf);
 
-		//if message is "
+		//if message is "quit"
+		if(strcmp(buf,"quit\n") == 0) break;
+
+		//clear buf
+		fflush(stdin);
+	}while(nread > 0);
+	
+	retur
