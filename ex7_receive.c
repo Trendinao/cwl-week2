@@ -36,4 +36,6 @@ int main(int argc, char *argv[]){
 		fflush(stdin);
 	}while(nread > 0);
 	
-	retur
+	return 0;
+}
+
