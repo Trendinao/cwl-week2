@@ -18,4 +18,9 @@ int main(int argc, char *argv[]){
 	
 	//if failed to open FIFO file
 	if((fd = open(argv[1], O_WRONLY)) < 0){
-		perror("failed 
+		perror("failed to open FIFO ");
+		return 0;
+	}
+
+	//input stdin string to buf until string is "quit"
+	while(fgets(buf
