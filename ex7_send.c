@@ -23,4 +23,6 @@ int main(int argc, char *argv[]){
 	}
 
 	//input stdin string to buf until string is "quit"
-	while(fgets(buf
+	while(fgets(buf, BUFSIZE, stdin)){
+		//input message and save at buf
+		if((nwrite = write(fd, buf, BUFSIZE)) < 0) perror("failed to write 
