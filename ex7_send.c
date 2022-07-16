@@ -25,4 +25,11 @@ int main(int argc, char *argv[]){
 	//input stdin string to buf until string is "quit"
 	while(fgets(buf, BUFSIZE, stdin)){
 		//input message and save at buf
-		if((nwrite = write(fd, buf, BUFSIZE)) < 0) perror("failed to write 
+		if((nwrite = write(fd, buf, BUFSIZE)) < 0) perror("failed to write to FIFO ");
+		
+		//if message is quit
+		if(strcmp(buf,"quit\n") == 0) break;
+		
+		//clear buf
+		fflush(stdin);
+	}
