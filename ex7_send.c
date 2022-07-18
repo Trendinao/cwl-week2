@@ -33,3 +33,7 @@ int main(int argc, char *argv[]){
 		//clear buf
 		fflush(stdin);
 	}
+
+	return 0;
+}
+
