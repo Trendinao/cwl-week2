@@ -13,4 +13,7 @@ int getch(void){
 	
 	tcsetattr(0, TCSAFLUSH, &buf);
 	ch = getchar();
-	tcsetattr(0, 
+	tcsetattr(0, TCSAFLUSH, &save);
+
+	return ch;
+}
