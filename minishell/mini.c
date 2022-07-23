@@ -10,4 +10,7 @@
 
 #define BUFSIZE 512
 
-in
+int main(int argc, char* argv[]){
+	fprintf(stderr, "User Shell >> "); 
+	char cmd[BUFSIZE];
+	memset(cmd, 0, sizeof(cmd
