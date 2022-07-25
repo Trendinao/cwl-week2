@@ -28,4 +28,9 @@ int main(int argc, char* argv[]){
 	int status;
 
 	if((c_pid = fork()) < 0){
-		fprintf(stderr, "
+		fprintf(stderr, "fork failed\n");
+	}
+	else if(c_pid > 0){
+		char argv[] = {NULL};
+		execvp(cmd, argv);
+		fprintf(stderr, "child pr
