@@ -20,4 +20,12 @@ int main(int argc, char* argv[]){
 		i++;
 	}
 	
-	for(i = 0; i < sizeof(cmd); i++)
+	for(i = 0; i < sizeof(cmd); i++){
+		printf("%c", cmd[i]);
+	}
+	
+	int c_pid;
+	int status;
+
+	if((c_pid = fork()) < 0){
+		fprintf(stderr, "
