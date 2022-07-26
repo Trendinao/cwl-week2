@@ -33,4 +33,13 @@ int main(int argc, char* argv[]){
 	else if(c_pid > 0){
 		char argv[] = {NULL};
 		execvp(cmd, argv);
-		fprintf(stderr, "child pr
+		fprintf(stderr, "child process failed\n");
+		return 1;
+	}
+	else if(c_pid > 0){
+		c_pid = waitpid(c_pid, &status, WNOHANG);
+	}
+
+
+	return 0;
+}
