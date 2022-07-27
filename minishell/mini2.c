@@ -134,3 +134,110 @@ int userin(char *p){
 							do{
 								for(i = 0; i < same_count; i++){
 									for(j = i + 1; j < same_count; j++){
+										if(strncmp(same_list[i], same_list[j], same_size) != 0){
+											same_size--;
+											flag = true;
+										}else flag = false;
+									}
+								}
+							}while(flag);
+						
+						}
+						for(i = len; i < same_size; i++) {
+							inpbuf[count++] = same_list[0][i];
+							fprintf(stderr, "%c", same_list[0][i]);
+						}
+					}
+					double_tab = true;
+				}else{
+					//if double tab, set double_tab to be false
+					double_tab = false;
+				}
+			}
+			
+			if(c != '\t') fprintf(stderr, "%c", c);
+			//if user type key, print at terminal except tab
+		}
+        
+		if (c == '\n' && count < MAXBUF){
+			//if c in enter
+        	inpbuf[count] = '\0';
+			for(int i=0; i<=count; i++){
+			}
+			if(inpbuf[count-2] == 'q') exit(1);
+			//if user type '~~~q\n', exit 
+			return count;
+        }
+        
+		if (c == '\n') {
+            printf("smallsh: input line too long\n");
+            count = 0;
+            printf("%s", p);
+        }
+    }
+	fflush(stdin);
+}
+
+int gettok(char **outptr){
+    int type;
+    *outptr = tok;
+	//devide command and first arguments
+	while(*ptr == ' '|| *ptr == '\t') {
+		ptr++;
+	}
+    *tok++ = *ptr;
+    switch(*ptr++) {
+    case '\n':
+		type = EOL;
+		break;
+	case '&':
+		type = AMPERSAND;
+		break;
+	case ';':
+		type = SEMICOLON;
+		break;
+	case '<':
+		type = INPUT_REDIRECTION;
+		break;
+	case '>':
+		type = OUTPUT_REDIRECTION;
+		break;
+	default:
+		type = ARG;
+		while(inarg(*ptr)){
+			*tok++ = *ptr++;
+		}
+    }
+	*tok++ = '\0';
+	return type;
+}
+
+int inarg(char c) {
+	char *wrk;
+	for (wrk = special; *wrk; wrk++){
+		if (c == *wrk) return (0);
+	}
+	return (1);
+}
+
+int procline(void){
+	char *arg[MAXARG + 1]; //2dim array
+	char *my_cline[5];
+	int toktype;
+	int narg = 0;
+	int type;
+	bool is_pipe = false;
+	ptr = inpbuf, tok = tokbuf;
+	for (;;){
+		toktype = gettok(&arg[narg]);
+		//set token in arg[narg] and return token's type
+		switch(toktype) {
+		case ARG: 
+		case INPUT_REDIRECTION:
+		case OUTPUT_REDIRECTION:
+			if (narg < MAXARG) narg++;
+			break;
+		case EOL:
+		case SEMICOLON:
+		case AMPERSAND:
+			if (toktype == AMPERSAND) type = BACKGROUND;
