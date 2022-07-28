@@ -241,3 +241,111 @@ int procline(void){
 		case SEMICOLON:
 		case AMPERSAND:
 			if (toktype == AMPERSAND) type = BACKGROUND;
+			else type = FOREGROUND;
+			
+			if (narg != 0){
+				//if user type any command
+				arg[narg] = NULL;
+				//set final element is null. for exec function
+				runcommand(arg , type, narg, is_pipe, my_cline, NULL);
+			}
+			
+			if (toktype == EOL){
+				return 0;
+			}
+			narg = 0;
+        	break;
+        }
+	}
+}
+
+int runcommand(char **cline, int where, int narg, bool is_pipe, char** my_cline, int* p_pipe_fd){
+	int pid;
+	int status;
+	int out_redir_index = 0;
+	int in_redir_index = 0;
+	int out_fd, in_fd;
+	bool set_in_fd = false;
+	int pipe_fd[2];
+	switch(pid = fork()) {
+	case -1:
+		perror("smallsh");
+		return(-1);
+	case 0:
+		//child process
+		act.sa_handler = SIG_DFL;
+		act2.sa_handler = SIG_DFL;
+		sigaction(SIGINT, &act, NULL);
+		sigaction(SIGQUIT, &act2, NULL);
+		
+		if(is_pipe){
+			if(close(p_pipe_fd[1]) < 0) fprintf(stderr, "[%d]close(p_pipe_fd[1]) failed\n", getpid());
+			else fprintf(stderr, "[%d]close(p_pipe_fd[1]) success\n", getpid());
+			dup2(p_pipe_fd[0], STDIN_FILENO);
+		}
+		
+		for(int i = 0; i < narg; i++){
+			if(strcmp(cline[i], "|") == 0){
+				is_pipe = true;
+				pipe(pipe_fd);
+				for(int j = 0; j < i; j++){
+					my_cline[j] = cline[j];
+					cline = &cline[i+1];
+					my_cline[j+1] = '\0';
+				}
+				runcommand(cline, where, narg-(i+1), is_pipe, my_cline, pipe_fd);
+				break;
+			}
+			is_pipe = false;
+		} 
+			
+		if((strcmp(cline[0], "ls")) == 0 && cline[1] == NULL){
+			usr_ls();
+		}
+
+		for(int i = 0; i < narg; i++){	
+			if(cline[i] != '\0' && strcmp(cline[i], ">") == 0){
+				out_redir_index = i;
+				//fprintf(stderr, "cline[%d][0] = %c, out_redir_index = %d\n", i, cline[i][0], out_redir_index);
+				if((out_fd = open(cline[out_redir_index+1], O_WRONLY | O_CREAT | O_EXCL | O_TRUNC, 0644)) < 0) perror("failed to open file");
+				dup2(out_fd, 1);
+				cline[out_redir_index+1] = '\0';
+				cline[out_redir_index] = '\0';
+				i++;
+			}
+			else if(strcmp(cline[narg - i - 1], "<") == 0){
+				in_redir_index = narg - i - 1;
+				//fprintf(stderr, "cline[%d][0] = %c, in_redir_index = %d\n", narg - i - 1, cline[narg - i - 1][0], in_redir_index);
+				if((in_fd = open(cline[in_redir_index+1], O_RDONLY)) < 0) perror("failed to open file");
+				if(!set_in_fd) dup2(in_fd, 0); //dup2(0, in_fd);
+				cline[in_redir_index+1] = '\0';
+				cline[in_redir_index] = '\0';
+				set_in_fd = true;
+			}
+		}
+		
+		execvp(*cline, cline);
+		perror(*cline);
+
+		exit(1);
+	}
+	//parent process
+	
+	if(is_pipe){
+		if(close(p_pipe_fd[0]) < 0 ) fprintf(stderr, "[%d]close(p_pipe_fd[0]) failed\n", getpid());
+		else fprintf(stderr, "[%d]close(p_pipe_fd[0]) success\n", getpid());
+		
+		int pid2;
+		int status2;
+		dup2(p_pipe_fd[1], STDOUT_FILENO);
+		if((pid2 = fork()) < 0) perror("failed to fork");
+		else if(pid2 != 0){
+			if(close(p_pipe_fd[1]) < 0 ) fprintf(stderr, "[%d]close(p_pipe_fd[1]) failed!!!!!!!!!!!!!!\n", getpid());
+			else fprintf(stderr, "[%d]close(p_pipe_fd[1]) success!!!!!!!!!!!!!!!!\n", getpid());
+			waitpid(pid2, &status2, 0);
+		}
+		else{
+			execvp(*my_cline, my_cline);
+		}
+	}
+	
