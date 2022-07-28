@@ -349,3 +349,43 @@ int runcommand(char **cline, int where, int narg, bool is_pipe, char** my_cline,
 		}
 	}
 	
+	if(where == BACKGROUND) {
+		printf("child's pid = %d\n", pid);
+		return(0);
+	}else if(waitpid(pid, &status, 0) == -1) return(-1);
+	else return (status);
+	
+}
+
+void usr_ls(){
+	struct dirent* dentry;
+	DIR* dirp;
+	char cwd[50];
+
+	getcwd(cwd, sizeof(cwd));
+	if((dirp = opendir(cwd)) == NULL) perror("open directory");
+	while((dentry = readdir(dirp)) != NULL){
+		if(strcmp(dentry->d_name, ".") != 0 && strcmp(dentry->d_name, "..") != 0) 
+			fprintf(stdout, "%s ", dentry->d_name);
+	}
+	fflush(stdout);
+	fprintf(stderr, "\n");
+	exit(1);
+}
+
+void handler(int signo){
+	fprintf(stderr, "SIGINT and SIGQUIT is bloked\n");
+}
+
+int main(){
+
+	act.sa_handler = handler;
+	act.sa_flags = 0;
+	act2.sa_handler = handler;
+	act2.sa_flags = 0;
+	sigemptyset(&act.sa_mask);
+	sigemptyset(&act2.sa_mask);
+	if(sigaction(SIGINT, &act, NULL) < 0) perror("failed to set SIGINT handler");
+	if(sigaction(SIGQUIT, &act2, NULL) < 0) perror("failed to set SIGQUIT handler");
+	while (1) while(userin(prompt) != EOF) procline();
+}
