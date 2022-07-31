@@ -20,3 +20,9 @@ Thread*     RunQHead;
 /* head and tail for join queue*/
 JoinStr* JoinQHead;
 JoinStr* JoinQTail;
+
+void* __wrapperFunc(void* arg);
+
+void __thread_wait_handler(int signo);
+Thread* __getThread(thread_t tid);
+voi
