@@ -13,3 +13,10 @@ typedef struct _JoinStr{
 	JoinStr* pPrev;
 	JoinStr* pNext;
 } JoinStr;
+
+/* head for running queue */
+Thread*     RunQHead;
+
+/* head and tail for join queue*/
+JoinStr* JoinQHead;
+JoinStr* JoinQTail;
