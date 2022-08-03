@@ -34,4 +34,9 @@ Thread* rq_pop();
 void print_rq();
 
 void wq_push(Thread *in_TCB);
-Thread* wq_search(pthread_t 
+Thread* wq_search(pthread_t s_tid);
+Thread* wq_remove(pthread_t r_tid);
+Thread* wq_pop();
+void print_wq();
+
+void jq_push(JoinStr *in_JCB
