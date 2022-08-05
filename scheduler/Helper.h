@@ -43,4 +43,9 @@ void jq_push(JoinStr *in_JCB);
 JoinStr* jq_search(pthread_t s_tid);
 JoinStr* jq_remove(pthread_t r_tid);
 JoinStr* jq_pop();
-void print_jq(
+void print_jq();
+
+
+void mq_push(Qcb *qcb, Message* in_msg);
+Message* mq_search(Qcb* qcb, long s_type);
+void mq_remove(Qcb* qcb,
