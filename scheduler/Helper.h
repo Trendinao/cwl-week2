@@ -48,4 +48,9 @@ void print_jq();
 
 void mq_push(Qcb *qcb, Message* in_msg);
 Message* mq_search(Qcb* qcb, long s_type);
-void mq_remove(Qcb* qcb,
+void mq_remove(Qcb* qcb, long r_type);
+Message* mq_pop(Qcb* qcb);
+void print_mq(Qcb* qcb);
+
+void tq_push(Qcb* qcb, Thread *tcb);
+Thread*
