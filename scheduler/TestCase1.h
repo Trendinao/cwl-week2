@@ -9,4 +9,7 @@
 #include "Thread.h"
 
 #define TOTAL_THREAD_NUM (5)
-void* T
+void* Tc1ThreadProc(void* param);
+void TestCase1(void);
+
+#endif
