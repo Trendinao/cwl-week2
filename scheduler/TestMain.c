@@ -12,4 +12,12 @@
 
 // #include "Task.h"
 // #include "init.h"
-// #include "Ob
+// #include "ObjMgr.h"
+// #include "Scheduler.h"
+
+void main(int argc, char* argv[])
+{
+	int TcNum;
+	thread_t tid1,tid2,tid3,tid4;
+
+	i
