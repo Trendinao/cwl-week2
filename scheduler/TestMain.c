@@ -39,4 +39,12 @@ void main(int argc, char* argv[])
 			thread_create(&tid2, NULL, (void*)TestCase2, 0);
 		    break;
 		case 3:
-			thread_create(
+			thread_create(&tid3, NULL, (void*)TestCase3, 0);
+		   	break;
+
+	}
+
+	RunScheduler();
+	while(1){}
+}
+
