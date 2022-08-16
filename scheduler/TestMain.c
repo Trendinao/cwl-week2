@@ -35,4 +35,8 @@ void main(int argc, char* argv[])
 		case 1:
 		    thread_create(&tid1, NULL, (void*)TestCase1, 0);
 			break;
-		case 
+		case 2:
+			thread_create(&tid2, NULL, (void*)TestCase2, 0);
+		    break;
+		case 3:
+			thread_create(
