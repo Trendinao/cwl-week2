@@ -289,3 +289,60 @@ Thread* wq_search(pthread_t s_tid){
 		tmp = tmp->pNext;
 		//advance tmp
 	}
+	
+	return NULL;
+	//if not founded
+}
+
+Thread* wq_remove(pthread_t r_tid){
+	//remove corresponding TCB from wait queue
+	Thread* tmp;
+	
+	if((tmp = wq_search(r_tid)) == NULL){
+		perror("not exist searching TCB : ");
+		return NULL;
+	}
+	printf("exist searching TCB (tid = %lu)\n",r_tid);
+	
+	if(tmp->pPrev != NULL) tmp->pPrev->pNext = tmp->pNext;
+	//previous TCB link to next TCB
+	if(tmp->pNext != NULL) tmp->pNext->pPrev = tmp->pPrev;
+	//next TCB link to previous TCB
+	printf("link prev and next complete\n");
+
+	tmp->pPrev = NULL;
+	tmp->pNext = NULL;
+	//init tmp
+	
+	return tmp;
+}
+
+Thread* wq_pop(){
+	//pop head TCB from wait queue
+	Thread* tmp;
+	tmp = WaitQHead;
+
+	if(tmp == NULL){
+		perror("not exist TCB in wait queue : ");
+		return NULL;
+	}
+
+	tmp->pNext->pPrev = NULL;
+	//next TCB unlink to tmp
+	WaitQHead = tmp->pNext;
+	//advance WaitQHead
+	tmp->pNext = NULL;
+	//tmp unlink to next TCB
+	
+	return tmp;
+}
+
+void print_wq(){
+	Thread* iter = WaitQHead;
+	while(iter != NULL){
+		printf("tid = %lu\n", iter->tid);
+		iter = iter->pNext;
+
+	}
+	printf("print wait queue end\n");
+}
