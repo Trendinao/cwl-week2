@@ -7,4 +7,11 @@ bool is_pushed;
 
 /* join structur */
 typedef struct _JoinStr JoinStr;
-typedef struct
+typedef struct _JoinStr{
+	pthread_t tid;
+	pthread_t parentTid;
+	JoinStr* pPrev;
+	JoinStr* pNext;
+} JoinStr;
+
+/* head for running queue 
