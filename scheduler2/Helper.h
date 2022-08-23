@@ -25,4 +25,8 @@ void* __wrapperFunc(void* arg);
 
 void __thread_wait_handler(int signo);
 Thread* __getThread(thread_t tid);
-void __th
+void __thread_wakeup(Thread* pTCB);
+
+void rq_push(Thread *in_TCB);
+Thread* rq_search(pthread_t s_tid);
+Thread* rq_remove(pthread_t r_tid);
