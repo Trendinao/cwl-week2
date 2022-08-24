@@ -30,3 +30,9 @@ void __thread_wakeup(Thread* pTCB);
 void rq_push(Thread *in_TCB);
 Thread* rq_search(pthread_t s_tid);
 Thread* rq_remove(pthread_t r_tid);
+Thread* rq_pop();
+void print_rq();
+
+void wq_push(Thread *in_TCB);
+Thread* wq_search(pthread_t s_tid);
+Thread
