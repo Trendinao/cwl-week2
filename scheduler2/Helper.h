@@ -40,4 +40,10 @@ Thread* wq_pop();
 void print_wq();
 
 void jq_push(JoinStr *in_JCB);
-JoinStr* jq_sea
+JoinStr* jq_search(pthread_t s_tid);
+JoinStr* jq_remove(pthread_t r_tid);
+JoinStr* jq_pop();
+void print_jq();
+
+
+void mq_push(Qcb *qcb,
