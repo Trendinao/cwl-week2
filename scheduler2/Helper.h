@@ -56,4 +56,7 @@ void tq_push(Qcb* qcb, Thread *tcb);
 Thread* tq_all_search(thread_t s_tid);
 Thread* tq_search(Qcb* qcb, long s_type);
 Thread* tq_remove(Qcb* qcb, long r_type);
-Thread* tq_pop(Qcb* qc
+Thread* tq_pop(Qcb* qcb);
+void print_tq(Qcb* qcb);
+
+
