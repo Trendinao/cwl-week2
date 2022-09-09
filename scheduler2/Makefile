@@ -6,4 +6,8 @@ CC = gcc
 CFLAGS = -g -c
 .SUFFIXES : .c .o
 
-$(T
+$(TARGET) : $(OBJECTS) 
+	$(CC) -g -pthread $(OBJECTS) -o $@
+Init.o : Init.c Helper.h
+#	$(CC) $(CFLAGS) $*.c -o $@
+MsgQueue.o : MsgQueue.c 
