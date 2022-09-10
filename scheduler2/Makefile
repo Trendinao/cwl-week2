@@ -10,4 +10,8 @@ $(TARGET) : $(OBJECTS)
 	$(CC) -g -pthread $(OBJECTS) -o $@
 Init.o : Init.c Helper.h
 #	$(CC) $(CFLAGS) $*.c -o $@
-MsgQueue.o : MsgQueue.c 
+MsgQueue.o : MsgQueue.c Helper.h
+#	$(CC) $(CFLAGS) $*.c -o $@
+Scheduler.o : Scheduler.c Init.h Thread.h Helper.h
+#	$(CC) $(CFLAGS) $*.c -o $@
+Thre
