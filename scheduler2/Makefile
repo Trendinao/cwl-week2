@@ -14,4 +14,7 @@ MsgQueue.o : MsgQueue.c Helper.h
 #	$(CC) $(CFLAGS) $*.c -o $@
 Scheduler.o : Scheduler.c Init.h Thread.h Helper.h
 #	$(CC) $(CFLAGS) $*.c -o $@
-Thre
+Thread.o : Thread.c Scheduler.h Helper.h
+#	$(CC) $(CFLAGS) $*.c -o $@
+TestMain.o : TestMain.c
+#	$(CC) $(CF
