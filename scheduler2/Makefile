@@ -21,4 +21,8 @@ TestMain.o : TestMain.c
 TestCase1.o : TestCase1.c
 #	$(CC) $(CFLAGS) $*.c -o $@
 TestCase2.o : TestCase2.c
-#	$(CC) $
+#	$(CC) $(CFLAGS) $*.c -o $@
+TestCase3.o : TestCase3.c
+#	$(CC) $(CFLAGS) $*.c -o $@
+TestCase4.o : TestCase4.c
+#	$(CC) $(CFLAGS) 
