@@ -17,4 +17,8 @@ Scheduler.o : Scheduler.c Init.h Thread.h Helper.h
 Thread.o : Thread.c Scheduler.h Helper.h
 #	$(CC) $(CFLAGS) $*.c -o $@
 TestMain.o : TestMain.c
-#	$(CC) $(CF
+#	$(CC) $(CFLAGS) $*.c -o $@
+TestCase1.o : TestCase1.c
+#	$(CC) $(CFLAGS) $*.c -o $@
+TestCase2.o : TestCase2.c
+#	$(CC) $
