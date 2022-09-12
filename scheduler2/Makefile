@@ -25,4 +25,6 @@ TestCase2.o : TestCase2.c
 TestCase3.o : TestCase3.c
 #	$(CC) $(CFLAGS) $*.c -o $@
 TestCase4.o : TestCase4.c
-#	$(CC) $(CFLAGS) 
+#	$(CC) $(CFLAGS) $*.c -o $@
+clean : 
+	rm $(OBJECTS)
