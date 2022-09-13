@@ -7,4 +7,9 @@
 #include <stdio.h>
 
 int RunScheduler( void ){
+	//run scheduler
+	Thread* pCurThread = NULL;
+	Thread* pNewThread = NULL;
 	
+	while(1){
+		fflush(std
