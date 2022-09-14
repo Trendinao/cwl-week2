@@ -12,4 +12,9 @@ int RunScheduler( void ){
 	Thread* pNewThread = NULL;
 	
 	while(1){
-		fflush(std
+		fflush(stdout);
+		
+		pCurThread = RunQHead;
+		//get running thread's TCB pointer
+		
+		if(ReadyQHead != NULL)
