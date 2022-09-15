@@ -19,4 +19,7 @@ int RunScheduler( void ){
 		
 		if(ReadyQHead != NULL){
 			//if ready queue is not empty	
-			if(pCurThread == NULL) //fprintf(stderr, "running thread's TCB isn't exist (
+			if(pCurThread == NULL) //fprintf(stderr, "running thread's TCB isn't exist (RunScheduler())\n");
+			if((pNewThread = ReadyQHead) == NULL){
+				//check any TCB is in ready queue
+				conti
