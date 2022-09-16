@@ -22,4 +22,8 @@ int RunScheduler( void ){
 			if(pCurThread == NULL) //fprintf(stderr, "running thread's TCB isn't exist (RunScheduler())\n");
 			if((pNewThread = ReadyQHead) == NULL){
 				//check any TCB is in ready queue
-				conti
+				continue;
+				//if ready queue is empty, don't call context switch
+			}
+		}
+		__ContextSwitch(pCurThread, p
