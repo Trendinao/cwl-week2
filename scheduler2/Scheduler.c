@@ -26,4 +26,12 @@ int RunScheduler( void ){
 				//if ready queue is empty, don't call context switch
 			}
 		}
-		__ContextSwitch(pCurThread, p
+		__ContextSwitch(pCurThread, pNewThread);
+		//context switch
+		
+		sleep(TIMESLICE);
+	}
+}
+
+
+void __ContextSwitch(Thread* pCurThread, Th
