@@ -34,4 +34,6 @@ int RunScheduler( void ){
 }
 
 
-void __ContextSwitch(Thread* pCurThread, Th
+void __ContextSwitch(Thread* pCurThread, Thread* pNewThread){
+	//send running thread to ready queue, pop head thread and run
+	//schduler call rq_pop, pass Thread pointer to
