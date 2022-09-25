@@ -46,4 +46,10 @@ void __ContextSwitch(Thread* pCurThread, Thread* pNewThread){
 		//set stoped thread's status to ready
 		
 		pthread_kill(pCurThread->tid, SIGUSR1);
-		//sto
+		//stop running thread
+		
+		rq_push(pCurThread);
+		//push stoped thread at ready queue
+	}
+
+	if(pNewThread != NULL){
