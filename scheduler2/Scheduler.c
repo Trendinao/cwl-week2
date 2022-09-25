@@ -42,4 +42,8 @@ void __ContextSwitch(Thread* pCurThread, Thread* pNewThread){
 		//if current thread is exist
 		
 		pCurThread->status = THREAD_STATUS_READY;
-	
+		pCurThread->bRunnable = false;
+		//set stoped thread's status to ready
+		
+		pthread_kill(pCurThread->tid, SIGUSR1);
+		//sto
