@@ -53,3 +53,8 @@ void __ContextSwitch(Thread* pCurThread, Thread* pNewThread){
 	}
 
 	if(pNewThread != NULL){
+		//if new thread is exist
+		
+		pNewThread = rq_pop();
+		__thread_wakeup(pNewThread);
+		//run new thread 
