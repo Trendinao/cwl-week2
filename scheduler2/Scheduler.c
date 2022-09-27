@@ -57,4 +57,10 @@ void __ContextSwitch(Thread* pCurThread, Thread* pNewThread){
 		
 		pNewThread = rq_pop();
 		__thread_wakeup(pNewThread);
-		//run new thread 
+		//run new thread by waking up
+		
+		RunQHead = pNewThread;
+		//for track running thread's TCB
+	}
+}
+
