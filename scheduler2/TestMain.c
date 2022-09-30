@@ -13,4 +13,11 @@
 #include "MsgQueue.h"
 
 // #include "Task.h"
-// #incl
+// #include "init.h"
+// #include "ObjMgr.h"
+// #include "Scheduler.h"
+
+void main(int argc, char* argv[])
+{
+	int TcNum;
+	
