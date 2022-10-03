@@ -20,4 +20,12 @@
 void main(int argc, char* argv[])
 {
 	int TcNum;
+	thread_t tid1,tid2,tid3,tid4;
+
+	if(argc != 2)
+	{
+		perror("Input TestCase Number!");
+		exit(0);
+	}
 	
+	Init
