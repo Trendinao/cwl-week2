@@ -28,4 +28,11 @@ void main(int argc, char* argv[])
 		exit(0);
 	}
 	
-	Init
+	Init(  );
+	
+	TcNum = atoi(argv[1]);
+	
+	switch(TcNum)
+	{
+		case 1:
+		    thread_create(&tid1, NULL, (void*)TestCase1
