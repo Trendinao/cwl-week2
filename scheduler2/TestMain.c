@@ -44,4 +44,12 @@ void main(int argc, char* argv[])
 			thread_create(&tid3, NULL, (void*)TestCase3, 0);
 		   	break;
 		case 4:
-			thread_create(&tid4, NULL,(void*)Test
+			thread_create(&tid4, NULL,(void*)TestCase4, 0);
+			break;
+		
+	}
+
+	RunScheduler();
+	while(1){}
+}
+
