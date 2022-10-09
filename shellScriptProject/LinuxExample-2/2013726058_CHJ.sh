@@ -102,3 +102,125 @@ print_1st_inform(){                                                   #print 1st
         tput setaf 7
         echo "$up_file" | cut -b -10                                    
       fi
+    else
+      tput setaf 2
+      echo "$up_file" | cut -b -10                                         
+    fi
+    tput setaf 7
+    i=`expr $i + 1`
+    
+    if [ $i -eq 22 ]                                                  #if over 20 line, break
+    then
+      break
+    fi
+  done
+  cd $p_dir                                                           #back to down directory
+}
+
+print_3rd_inform(){                                                   #print 3rd information
+  tput cup `expr $length + 1` 30
+  echo "file name : `stat -c %n ${a_list[$I]}`"
+  tput cup `expr $length + 2` 30
+  if [ -d ${a_list[$I]} ]
+  then
+    echo -e [34m"file type : `stat -c %F ${a_list[$I]}`"            #]
+  elif [ -f ${a_list[$I]} ]
+  then
+    if [ -x ${a_list[$I]} ]
+    then
+      echo -e [31m"file type : `stat -c %F ${a_list[$I]}`"          #]
+    else
+      echo -e [0m"file type : `stat -c %F ${a_list[$I]}`"           #]
+    fi
+  else
+    echo -e [32m"file type : `stat -c %F ${a_list[$I]}`"            #]
+  fi
+  tput cup `expr $length + 3` 30
+  echo -e [0m"file size : `stat -c %s ${a_list[$I]}`"               #]
+  tput cup `expr $length + 4` 30
+  echo "modification time : `stat -c %y ${a_list[$I]}`"
+  tput cup `expr $length + 5` 30
+  echo "permition : `stat -c %a ${a_list[$I]}`"
+  tput cup `expr $length + 6` 30
+  echo "absolute path : `realpath -e ${a_list[$I]}`"
+  tput cup $cy $cx
+}
+
+print_d_icon(){                                                       #print direcory icon / blue color
+  if [ -d ${a_list[$i+$scroll*5]} ]
+  then
+    if [ "${a_list[$i+$scroll*5]}" = ".." ]                           #if .. / red color
+    then
+      tput setaf 1
+    else                                                              #if not .. / blue color
+      tput setaf 4
+    fi
+    if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                     #if selected
+    then
+      tput rev
+    fi
+    echo '  -----'                                              
+    tput cup `expr $py + 1` $px
+    echo '--    -'
+    tput cup `expr $py + 2` $px
+    echo '-  D  -'
+    tput cup `expr $py + 3` $px
+    echo '-------'
+    tput cup `expr $py + 4` $px
+    echo `stat -c %n ${a_list[$i+$scroll*5]}` | cut -b -10
+    tput setaf 7
+    if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                     #if selected
+    then
+      tput sgr0                                                       #reset
+    fi
+  fi
+}
+
+print_f_icon(){
+  if [ -f ${a_list[$i+$scroll*5]} ]
+  then
+    tput setaf 7
+    if [ -x ${a_list[$i+$scroll*5]} ]
+    then
+      tput setaf 1
+    fi
+  else
+    tput setaf 2
+  fi
+
+  if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                       #if selected
+  then
+    tput rev
+  fi
+  echo '-------'
+  tput cup `expr $py + 1` $px
+  echo '-     -'
+  tput cup `expr $py + 2` $px
+  echo '-  F  -'
+  tput cup `expr $py + 3` $px
+  echo '-------'
+  tput cup `expr $py + 4` $px
+  echo `stat -c %n ${a_list[$i+$scroll*5]}` | cut -b -10
+  if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                       #if selected
+  then
+    tput sgr0
+  fi
+}
+
+print_icon(){                                                         #print icon
+  px=23                                                              
+  py=1
+
+  for ((i=0 ; i<25 ; i++))
+  do
+    if [ "${a_list[$i+$scroll*5]}" = "$NULL" ]                        #if file number < 25, don't print reaminder icon
+    then
+      break
+    fi
+    tput cup $py $px                                                  #adjust x, y
+    if [ -d ${a_list[$i+$scroll*5]} ]                                 #if f_list is directory 
+    then
+      print_d_icon
+    else
+      print_f_icon                                                    #if f_list is not directory
+    fi
