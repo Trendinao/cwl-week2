@@ -345,3 +345,32 @@ cursoring(){                                                          #impement 
     else
       continue
     fi
+
+    if [ $cx -le 20 ]                                                 #if cursor is out of 2nd frame's left line
+    then
+      cx=`expr $cx + $ax`
+      I=`expr $I + 1`
+    elif [ $cx -ge $width ]                                           #if cursor is out of 2nd frame's right line
+    then
+      cx=`expr $cx - $ax`
+      I=`expr $I - 1`
+    elif [ $cy -le 0 ]                                                #if cursor is out of 2nd frame's top line
+    then
+      cy=`expr $cy + $ay`
+      if [ $scroll -eq 0 ]
+      then
+        I=`expr $I + 5`
+      elif [ $scroll -ge 1 ]                                            
+      then
+        scroll=`expr $scroll - 1`
+      fi
+    elif [ $cy -ge $length ]                                          #if cursor is out of 2nd frame's bottom line
+    then
+      cy=`expr $cy - $ay`
+      scroll=`expr $scroll + 1`
+    fi    
+    tput cup $cy $cx                                                  #set cursor next place
+  done
+}
+
+cursoring
