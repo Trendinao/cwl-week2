@@ -224,3 +224,124 @@ print_icon(){                                                         #print ico
     else
       print_f_icon                                                    #if f_list is not directory
     fi
+    
+    px=`expr $px + $ax`                                               #change x
+    if [ $px -ge $width ]                                             #if x over width
+    then
+      px=23                                                           #reset x
+      py=`expr $py + $ay`                                             #next icon line
+    elif [ $py -ge $length ]                                          #if y over length
+    then
+      break
+    fi
+  done
+  tput sgr0
+}
+
+copy(){                                                               #copy 
+  a_c[$ic]="$PWD/${a_list[$I]}"
+  if [ $ic -ge 3 ]
+  then
+    a_c[0]=${a_c[1]}
+    a_c[1]=${a_c[2]}
+    a_c[2]=${a_c[3]}
+    ic=3
+  fi
+  ic=$(( $ic + 1 ))
+}
+
+move(){                                                               #move
+  a_m[$im]="$PWD/${a_list[$I]}"
+  if [ $im -ge 3 ]
+  then
+    a_m[0]=${a_m[1]}
+    a_m[1]=${a_m[2]}
+    a_m[2]=${a_m[3]}
+    im=3
+  fi
+  im=$(( $im + 1 ))
+}
+
+cursoring(){                                                          #impement cursor
+  set_base
+  cx=23                                                               #set cursor x, y
+  cy=5
+  kb_hit=0                                                            #key board hit 
+  declare -i scroll=0                                                 #scroll
+  declare -i I=0                                                      #file index
+  while [ 1 ]
+  do
+    make_frame
+    print_1st_inform
+    print_4th_inform
+    print_icon
+    print_3rd_inform
+    
+    read -sn 1 kb_hit
+    if [ "$kb_hit" = '' ]
+    then
+      read -sn 1 kb_hit
+      read -sn 1 kb_hit
+    fi
+
+    if [ "$kb_hit" = "A" ]                                            # hit up button
+    then
+      cy=`expr $cy - $ay`
+      I=`expr $I - 5`
+    elif [ "$kb_hit" = "B" ]                                          # hit down button
+    then
+      cy=`expr $cy + $ay`
+      I=`expr $I + 5`
+    elif [ "$kb_hit" = "C" ]                                          # hit right button
+    then
+      cx=`expr $cx + $ax`
+      I=`expr $I + 1`
+    elif [ "$kb_hit" = "D" ]                                          # hit left button
+    then
+      cx=`expr $cx - $ax`
+      I=`expr $I - 1`
+    elif [ "$kb_hit" = "" ]                                           #hit space bar
+    then
+      if [ -d ${a_list[$I]} ]                                         #if directory
+      then
+        cd `realpath -e ${a_list[$I]}`
+        cursoring
+      elif [ -x ${a_list[$I]} ]                                       #if excutive file
+      then
+        clear
+        ./${a_list[$I]}
+      fi
+    elif [ "$kb_hit" = "c" ]                                          #if want to copy
+    then
+      copy
+    elif [ "$kb_hit" = "p" ]                                          #if want to paste
+    then
+      for((j=0; j<3; j++))
+      do
+        if [ "${a_c[$j]}" = "$NULL" ]
+	then
+	  break
+	fi
+        cp ${a_c[$j]} $PWD
+      done
+    a_c=("$null" "$null" "$null" "$null")                             #reset array for copy
+    elif [ "$kb_hit" = "m" ]                                          #if want to move
+    then
+      move
+    elif [ "$kb_hit" = "v" ]                                          #if want to move
+    then
+      for((j=0; j<3; j++))
+      do
+        if [ "${a_m[$j]}" = "$NULL" ]
+	then
+	  break
+	fi
+        mv ${a_m[$j]} $PWD
+      done
+    a_m=("$null" "$null" "$null" "$null")                             #reset array for move
+    elif [ "$kb_hit" = "q" ]                                          #if hit q button, break
+    then
+      break
+    else
+      continue
+    fi
