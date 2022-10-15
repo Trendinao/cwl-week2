@@ -76,3 +76,119 @@ print_4th_inform(){                                                 #print 4th i
   pt_size=`du . | tail -n 1 | head -c 3`                            #present total size
   tput cup 33 30
   echo "$pt_num total   $pd_num directory   $pf_num file   $ps_num s-file   $pt_size total size"
+#  tput cup 31
+}
+
+print_1st_inform(){                                                 #print 1st information
+  declare -i i=1
+  for up_file in `ls -1 ..*`                                        #upper directory files
+  do
+    tput cup $i 1
+    if [ -d $up_file ]
+    then
+      echo [34m"$up_file"                                        #]
+    elif [ -f $up_file ]
+    then
+      if [ -x $up_file ]
+      then
+        echo [32m"$up_file"                                        #]
+      else
+        echo [33m"$up_file"                                      #]
+      fi
+    else
+      echo [0m "$up_file"                                         #]
+    fi
+    echo [0m""                                                    #]
+    i=`expr $i + 1`
+    
+    if [ $i -eq 21 ]                                                #if over 20 line, break
+    then
+      break
+    fi
+  done
+}
+
+print_3rd_inform(){                                                 #print 3rd information
+  tput cup `expr $length + 1` 30
+  echo "`stat -c %n ${a_list[$I]}`"
+  tput cup `expr $length + 2` 30
+   if [ -d ${a_list[$I]} ]
+     then
+       echo -e [34m"file type : `stat -c %F ${a_list[$I]}`"             #]
+     elif [ -f ${a_list[$I]} ]
+     then
+       if [ -x ${a_list[$I]} ]
+       then
+         echo -e [33m"file type : `stat -c %F ${a_list[$I]}`"           #]
+       else
+         echo -e [0m"file type : `stat -c %F ${a_list[$I]}`"            #]
+       fi
+     else
+       echo -e [32m"file type : `stat -c %F ${a_list[$I]}`"             #]
+   fi
+  tput cup `expr $length + 3` 30
+  echo -e [0m"file size : `stat -c %s ${a_list[$I]}`"                    #]
+  tput cup `expr $length + 4` 30
+  echo "modification time : `stat -c %y ${a_list[$I]}`"
+  tput cup `expr $length + 5` 30
+  echo "permition : `stat -c %a ${a_list[$I]}`"
+  tput cup `expr $length + 6` 30
+  echo "absolute path : `realpath -e ${a_list[$I]}`"
+  tput cup $cy $cx
+}
+
+print_d_icon(){                                                     #print direcory icon / blue color
+  if [ -d $f_list ]
+  then
+    if [ "$f_list" = ".." ]
+    then
+      echo [31m'  -----'                                              #]
+      tput cup `expr $py + 1` $px
+      echo '--    -'
+      tput cup `expr $py + 2` $px
+      echo '-  D  -'
+      tput cup `expr $py + 3` $px
+      echo '-------'
+      tput cup `expr $py + 4` $px
+      echo `stat -c %n $f_list`
+      echo -n [0m                                                     #]
+    else
+      echo [34m'  -----'                                              #]
+      tput cup `expr $py + 1` $px
+      echo '--    -'
+      tput cup `expr $py + 2` $px
+      echo '-  D  -'
+      tput cup `expr $py + 3` $px
+      echo '-------'
+      tput cup `expr $py + 4` $px
+      echo `stat -c %n $f_list`
+      echo -n [0m                                                     #]
+    fi
+  fi
+}
+
+print_o_icon(){
+  if [ -f $f_list ]
+  then
+    echo '-------'
+    tput cup `expr $py + 1` $px
+    echo '-     -'
+    tput cup `expr $py + 2` $px
+    echo '-  F  -'
+    tput cup `expr $py + 3` $px
+    echo '-------'
+    tput cup `expr $py + 4` $px
+    echo `stat -c %n $f_list`
+  fi
+}
+
+print_x_icon(){                                                     #print excutive file icon / yellow color
+  echo -n [33m                                                    #] 
+  print_o_icon
+  echo -n [0m                                                     #]
+}
+
+print_s_icon(){                                                     #print special file icon / green color
+  echo -n [32m                                                    #] 
+  print_o_icon
+  echo -n [0m                                                     #]
