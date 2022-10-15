@@ -192,3 +192,102 @@ print_s_icon(){                                                     #print speci
   echo -n [32m                                                    #] 
   print_o_icon
   echo -n [0m                                                     #]
+  
+}
+
+print_icon(){                                                       #print icon
+  px=23                                                              
+  py=1
+
+  for f_list in $p_f_list 
+  do
+    tput cup $py $px                                                #adjust x, y
+    if [ -d $f_list ]                                               #if f_list is directory 
+    then
+      print_d_icon
+    elif [ -f $f_list ]                                             #if f_list is file
+    then
+      if [ -x $f_list ]                                             #if f_list is excutive file
+      then
+        print_x_icon
+      else                                                          #if f_list is ordinary file
+        print_o_icon
+      fi
+    else
+      print_s_icon                                                  #if f_list is special file
+    fi
+    
+    px=`expr $px + $ax`                                             #change x
+
+    if [ $px -ge `expr $width - 15` ]                               #if x over width
+    then
+      px=23                                                         #reset x
+      py=`expr $py + $ay`                                           #next icon line
+    fi
+  done
+}
+
+cursoring(){                                                        #impement cursor
+  cx=23                                                            #set cursor x, y
+  cy=5
+  kb_hit=0                                                          #key board hit 
+  declare -i I=0                                                    #file index
+  
+  while [ 1 ]
+  do
+    make_frame
+    print_1st_inform
+    print_4th_inform
+    print_icon
+    print_3rd_inform
+
+    read -sn 1 kb_hit
+    if [ $kb_hit = "A" ]                                            # hit up button
+    then
+      cy=`expr $cy - $ay`
+      I=`expr $I - 5`
+    elif [ $kb_hit = "B" ]                                          # hit down button
+    then
+      cy=`expr $cy + $ay`
+      I=`expr $I + 5`
+    elif [ $kb_hit = "C" ]                                          # hit right button
+    then
+      cx=`expr $cx + $ax`
+      I=`expr $I + 1`
+    elif [ $kb_hit = "D" ]                                          # hit left button
+    then
+      cx=`expr $cx - $ax`
+      I=`expr $I - 1`
+    elif [ $kb_hit = "q" ]                                             #if hit q button, break
+    then
+      break
+    else
+      continue
+    fi
+
+    if [ $cx -le 20 ]                                               #if cursor is out of frame
+    then
+      cx=`expr $cx + $ax`
+      I=`expr $I + 1`
+    elif [ $cx -ge $width ]
+    then
+      cx=`expr $cx - $ax`
+      I=`expr $I - 1`
+    elif [ $cy -le 0 ]
+    then
+      cy=`expr $cy + $ay`
+      I=`expr $I + 5`
+    elif [ $cy -ge 29 ]
+    then
+      cy=`expr $cy - $ay`
+      I=`expr $I - 5`
+    fi
+    
+    tput cup $cy $cx
+
+  done
+
+}
+
+
+#make_frame
