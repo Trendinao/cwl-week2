@@ -291,3 +291,7 @@ cursoring(){                                                        #impement cu
 
 
 #make_frame
+#print_1st_inform
+#print_4th_inform
+#print_icon
+cursoring
