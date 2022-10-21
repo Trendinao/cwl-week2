@@ -7,4 +7,5 @@ declare -i py                                                         #set prese
 declare -i ax=20                                                      #set addition for x
 declare -i ay=6                                                       #set addition for y
 declare -i cx                                                         #declare cursor x
-declare -i cy                        
+declare -i cy                                                         #declare cursor y
+a_c=("$null" "$null" "$null" "$null")                         
