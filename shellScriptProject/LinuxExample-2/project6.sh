@@ -6,4 +6,5 @@ declare -i px                                                         #set prese
 declare -i py                                                         #set present y
 declare -i ax=20                                                      #set addition for x
 declare -i ay=6                                                       #set addition for y
-declare -i cx 
+declare -i cx                                                         #declare cursor x
+declare -i cy                        
