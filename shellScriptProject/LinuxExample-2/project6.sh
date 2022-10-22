@@ -8,4 +8,7 @@ declare -i ax=20                                                      #set addit
 declare -i ay=6                                                       #set addition for y
 declare -i cx                                                         #declare cursor x
 declare -i cy                                                         #declare cursor y
-a_c=("$null" "$null" "$null" "$null")                         
+a_c=("$null" "$null" "$null" "$null")                                 #array for copy
+a_m=("$null" "$null" "$null" "$null")                                 #array for move
+
+set_base(
