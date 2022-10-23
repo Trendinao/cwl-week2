@@ -12,4 +12,9 @@ a_c=("$null" "$null" "$null" "$null")                                 #array for
 a_m=("$null" "$null" "$null" "$null")                                 #array for move
 
 set_base(){
-  p_f_list=`ls -a | grep '\.\.'; ls -1F | grep '/$'; ls -1F | grep '*$'; ls -1F | grep -v '[/*|]$'` 
+  p_f_list=`ls -a | grep '\.\.'; ls -1F | grep '/$'; ls -1F | grep '*$'; ls -1F | grep -v '[/*|]$'`  #present file list < directory
+  for AB in *
+  do
+    if ! [ -d $AB ] && ! [ -f $AB ]
+    then
+      p_f_list="$p_f_list $AB"     
