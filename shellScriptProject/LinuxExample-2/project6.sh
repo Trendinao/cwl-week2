@@ -17,4 +17,10 @@ set_base(){
   do
     if ! [ -d $AB ] && ! [ -f $AB ]
     then
-      p_f_list="$p_f_list $AB"     
+      p_f_list="$p_f_list $AB"                                        #to deal with special file
+    fi
+  done
+  a_list=($p_f_list)
+}
+
+print_equal(){ 
