@@ -23,4 +23,6 @@ set_base(){
   a_list=($p_f_list)
 }
 
-print_equal(){ 
+print_equal(){                                                        #print =====...
+  printf " "
+  for ((line=1 ; line<$wid
