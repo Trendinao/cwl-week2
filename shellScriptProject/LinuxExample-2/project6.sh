@@ -32,4 +32,5 @@ print_equal(){                                                        #print ===
   printf "\n"
 }
  
-make_frame(){                               
+make_frame(){                                                         #print total frame
+  clear                                                        
