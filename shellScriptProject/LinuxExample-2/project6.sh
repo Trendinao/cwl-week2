@@ -25,4 +25,11 @@ set_base(){
 
 print_equal(){                                                        #print =====...
   printf " "
-  for ((line=1 ; line<$wid
+  for ((line=1 ; line<$width ; line++))
+  do
+    printf "="
+  done
+  printf "\n"
+}
+ 
+make_frame(){                               
