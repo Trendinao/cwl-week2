@@ -33,4 +33,7 @@ print_equal(){                                                        #print ===
 }
  
 make_frame(){                                                         #print total frame
-  clear                                                        
+  clear                                                               #first, clear terminal
+ 
+  print_equal                                                       
+  for ((
