@@ -36,4 +36,6 @@ make_frame(){                                                         #print tot
   clear                                                               #first, clear terminal
  
   print_equal                                                       
-  for ((
+  for ((i=0 ; i<$length ; i++))
+  do
+    echo "|                   |"                                      #print 1st left right 
