@@ -38,4 +38,5 @@ make_frame(){                                                         #print tot
   print_equal                                                       
   for ((i=0 ; i<$length ; i++))
   do
-    echo "|                   |"                                      #print 1st left right 
+    echo "|                   |"                                      #print 1st left right frame
+    tput cup `expr $i + 1` $width                                     #print 2nd right fra
