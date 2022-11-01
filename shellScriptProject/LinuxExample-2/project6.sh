@@ -46,4 +46,7 @@ make_frame(){                                                         #print tot
   printf " "
   tput cup $i $width
   printf " "
-  tput cup $i
+  tput cup $i 0
+ 
+  print_equal                                                       
+  for ((i=`expr $length + 1` ; i<`ex
