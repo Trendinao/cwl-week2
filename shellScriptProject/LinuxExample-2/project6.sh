@@ -42,4 +42,8 @@ make_frame(){                                                         #print tot
     tput cup `expr $i + 1` $width                                     #print 2nd right frame
     echo "|"
   done
-  tput cup 0 20                                                       #no 
+  tput cup 0 20                                                       #no connection with length, so x represent 20
+  printf " "
+  tput cup $i $width
+  printf " "
+  tput cup $i
