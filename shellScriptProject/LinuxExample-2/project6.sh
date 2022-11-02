@@ -49,4 +49,8 @@ make_frame(){                                                         #print tot
   tput cup $i 0
  
   print_equal                                                       
-  for ((i=`expr $length + 1` ; i<`ex
+  for ((i=`expr $length + 1` ; i<`expr $length + 7` ; i++))           #print 3rd left right frame
+  do
+    echo "|"
+    tput cup $i $width
+    echo "
