@@ -53,4 +53,10 @@ make_frame(){                                                         #print tot
   do
     echo "|"
     tput cup $i $width
-    echo "
+    echo "|"
+  done
+  tput cup $length 20
+  printf " "
+  tput cup $i 0
+
+  print_equal                                    
