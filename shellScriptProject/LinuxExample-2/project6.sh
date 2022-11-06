@@ -59,4 +59,6 @@ make_frame(){                                                         #print tot
   printf " "
   tput cup $i 0
 
-  print_equal                                    
+  print_equal                                                       
+  printf "|"                                                          #print 4th left right frame
+  tpu
