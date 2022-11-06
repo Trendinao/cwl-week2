@@ -61,4 +61,9 @@ make_frame(){                                                         #print tot
 
   print_equal                                                       
   printf "|"                                                          #print 4th left right frame
-  tpu
+  tput cup `expr $i + 1` $width
+  echo "|"
+  print_equal
+}
+
+print_4th_inform(){                                   
