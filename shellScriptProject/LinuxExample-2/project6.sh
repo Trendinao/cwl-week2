@@ -66,4 +66,6 @@ make_frame(){                                                         #print tot
   print_equal
 }
 
-print_4th_inform(){                                   
+print_4th_inform(){                                                   #print 4th information
+  pt_num=`ls | wc -l`                                                 #present total number
+ 
