@@ -69,4 +69,5 @@ make_frame(){                                                         #print tot
 print_4th_inform(){                                                   #print 4th information
   pt_num=`ls | wc -l`                                                 #present total number
   pd_num=`ls -lF | grep '/$' | wc -l`                                 #present directory number
-  ps_num=`ls -lF | g
+  ps_num=`ls -lF | grep '|$' | wc -l`                                 #present special file number
+  pf_num=`expr $pt_num - $pd_num - $ps_num`        
