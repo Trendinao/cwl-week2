@@ -71,4 +71,6 @@ print_4th_inform(){                                                   #print 4th
   pd_num=`ls -lF | grep '/$' | wc -l`                                 #present directory number
   ps_num=`ls -lF | grep '|$' | wc -l`                                 #present special file number
   pf_num=`expr $pt_num - $pd_num - $ps_num`                           #present file number
-  pt_size=`du -h . | tail -n 1 | head -c 4`                              #present total s
+  pt_size=`du -h . | tail -n 1 | head -c 4`                              #present total size
+  tput cup 38 30
+  echo "$pt_num total   $pd_num directory   $pf_num file   $ps_num s-file   $pt_size tota
