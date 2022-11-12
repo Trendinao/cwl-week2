@@ -73,4 +73,8 @@ print_4th_inform(){                                                   #print 4th
   pf_num=`expr $pt_num - $pd_num - $ps_num`                           #present file number
   pt_size=`du -h . | tail -n 1 | head -c 4`                              #present total size
   tput cup 38 30
-  echo "$pt_num total   $pd_num directory   $pf_num file   $ps_num s-file   $pt_size tota
+  echo "$pt_num total   $pd_num directory   $pf_num file   $ps_num s-file   $pt_size total size"
+#  tput cup 31
+}
+
+print_1st_inform(){                                                   #print 1
