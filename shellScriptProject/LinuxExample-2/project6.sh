@@ -77,4 +77,10 @@ print_4th_inform(){                                                   #print 4th
 #  tput cup 31
 }
 
-print_1st_inform(){                                                   #print 1
+print_1st_inform(){                                                   #print 1st information
+  declare -i i=2
+  p_dir=`pwd`
+  cd ..
+  tput cup `expr $i - 1` 1
+  tput setaf 1
+  ec
