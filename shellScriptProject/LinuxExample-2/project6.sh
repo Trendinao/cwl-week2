@@ -83,4 +83,8 @@ print_1st_inform(){                                                   #print 1st
   cd ..
   tput cup `expr $i - 1` 1
   tput setaf 1
-  ec
+  echo ".."
+  
+  for up_file in *                                                    #upper directory files
+  do
+    tput cup
