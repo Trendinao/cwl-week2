@@ -87,4 +87,8 @@ print_1st_inform(){                                                   #print 1st
   
   for up_file in *                                                    #upper directory files
   do
-    tput cup
+    tput cup $i 1
+    if [ -d $up_file ]
+    then
+      tput setaf 4
+      echo "$up_file" | cut -b -10                      
