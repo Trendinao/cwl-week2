@@ -100,4 +100,8 @@ print_1st_inform(){                                                   #print 1st
         echo "$up_file" | cut -b -10                                       
       else
         tput setaf 7
-        echo "
+        echo "$up_file" | cut -b -10                                    
+      fi
+    else
+      tput setaf 2
+      echo "$up_file"
