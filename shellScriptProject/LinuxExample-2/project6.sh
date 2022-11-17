@@ -97,4 +97,7 @@ print_1st_inform(){                                                   #print 1st
       if [ -x $up_file ]
       then
         tput setaf 1
-        echo "$
+        echo "$up_file" | cut -b -10                                       
+      else
+        tput setaf 7
+        echo "
