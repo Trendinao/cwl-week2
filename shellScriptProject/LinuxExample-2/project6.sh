@@ -109,4 +109,12 @@ print_1st_inform(){                                                   #print 1st
     tput setaf 7
     i=`expr $i + 1`
     
-    if [ $i -eq 22 ]        
+    if [ $i -eq 22 ]                                                  #if over 20 line, break
+    then
+      break
+    fi
+  done
+  cd $p_dir
+}
+
+print_3rd_inf
