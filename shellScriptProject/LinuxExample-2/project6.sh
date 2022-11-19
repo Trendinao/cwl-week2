@@ -104,4 +104,9 @@ print_1st_inform(){                                                   #print 1st
       fi
     else
       tput setaf 2
-      echo "$up_file"
+      echo "$up_file" | cut -b -10                                         
+    fi
+    tput setaf 7
+    i=`expr $i + 1`
+    
+    if [ $i -eq 22 ]        
