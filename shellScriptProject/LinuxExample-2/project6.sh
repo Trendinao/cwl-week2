@@ -120,4 +120,8 @@ print_1st_inform(){                                                   #print 1st
 print_3rd_inform(){                                                   #print 3rd information
   tput cup `expr $length + 1` 30
   echo "file name : `stat -c %n ${a_list[$I]}`"
-  tput cup `expr $length + 2`
+  tput cup `expr $length + 2` 30
+   if [ -d ${a_list[$I]} ]
+     then
+       echo -e [34m"file type : `stat -c %F ${a_list[$I]}`"         #]
+     e
