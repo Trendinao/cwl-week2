@@ -128,4 +128,6 @@ print_3rd_inform(){                                                   #print 3rd
      then
        if [ -x ${a_list[$I]} ]
        then
-         echo -e [31m"file type : `st
+         echo -e [31m"file type : `stat -c %F ${a_list[$I]}`"       #]
+       else
+         echo -e [0m"file type : `stat -c %F ${a_list[$I]}`"        #]
