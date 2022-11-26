@@ -135,4 +135,6 @@ print_3rd_inform(){                                                   #print 3rd
      else
        echo -e [32m"file type : `stat -c %F ${a_list[$I]}`"         #]
    fi
-  t
+  tput cup `expr $length + 3` 30
+  echo -e [0m"file size : `stat -c %s ${a_list[$I]}`"               #]
+ 
