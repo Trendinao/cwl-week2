@@ -137,4 +137,6 @@ print_3rd_inform(){                                                   #print 3rd
    fi
   tput cup `expr $length + 3` 30
   echo -e [0m"file size : `stat -c %s ${a_list[$I]}`"               #]
- 
+  tput cup `expr $length + 4` 30
+  echo "modification time : `stat -c %y ${a_list[$I]}`"
+  tput cup `expr $length
