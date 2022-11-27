@@ -139,4 +139,7 @@ print_3rd_inform(){                                                   #print 3rd
   echo -e [0m"file size : `stat -c %s ${a_list[$I]}`"               #]
   tput cup `expr $length + 4` 30
   echo "modification time : `stat -c %y ${a_list[$I]}`"
-  tput cup `expr $length
+  tput cup `expr $length + 5` 30
+  echo "permition : `stat -c %a ${a_list[$I]}`"
+  tput cup `expr $length + 6` 30
+  echo "absolute path : `r
