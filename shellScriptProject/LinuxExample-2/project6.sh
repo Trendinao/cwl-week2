@@ -142,4 +142,8 @@ print_3rd_inform(){                                                   #print 3rd
   tput cup `expr $length + 5` 30
   echo "permition : `stat -c %a ${a_list[$I]}`"
   tput cup `expr $length + 6` 30
-  echo "absolute path : `r
+  echo "absolute path : `realpath -e ${a_list[$I]}`"
+  tput cup $cy $cx
+}
+
+print_d_icon(){                                      
