@@ -149,4 +149,7 @@ print_3rd_inform(){                                                   #print 3rd
 print_d_icon(){                                                       #print direcory icon / blue color
   if [ -d ${a_list[$i+$scroll*5]} ]
   then
-    if [ "${a_list[$i+$scroll*5
+    if [ "${a_list[$i+$scroll*5]}" = ".." ]
+    then
+      tput setaf 1
+      if [ `expr $py + 4` = $cy ] && [ $px == $cx ]  
