@@ -146,4 +146,7 @@ print_3rd_inform(){                                                   #print 3rd
   tput cup $cy $cx
 }
 
-print_d_icon(){                                      
+print_d_icon(){                                                       #print direcory icon / blue color
+  if [ -d ${a_list[$i+$scroll*5]} ]
+  then
+    if [ "${a_list[$i+$scroll*5
