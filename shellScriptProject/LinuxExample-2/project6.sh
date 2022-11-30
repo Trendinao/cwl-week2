@@ -152,4 +152,8 @@ print_d_icon(){                                                       #print dir
     if [ "${a_list[$i+$scroll*5]}" = ".." ]
     then
       tput setaf 1
-      if [ `expr $py + 4` = $cy ] && [ $px == $cx ]  
+      if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                   #if selected
+      then
+        tput rev
+      fi
+      echo '  -----'                          
