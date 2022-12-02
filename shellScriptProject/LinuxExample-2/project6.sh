@@ -160,4 +160,8 @@ print_d_icon(){                                                       #print dir
       tput cup `expr $py + 1` $px
       echo '--    -'
       tput cup `expr $py + 2` $px
-     
+      echo '-  D  -'
+      tput cup `expr $py + 3` $px
+      echo '-------'
+      tput cup `expr $py + 4` $px
+      echo `
