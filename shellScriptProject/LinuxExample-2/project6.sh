@@ -166,4 +166,10 @@ print_d_icon(){                                                       #print dir
       tput cup `expr $py + 4` $px
       echo `stat -c %n ${a_list[$i+$scroll*5]}` | cut -b -10
       tput setaf 7
-      if [ `expr $py + 4` = $cy ] && [ $px == $
+      if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                   #if selected
+      then
+        tput sgr0
+      fi
+    else
+      tput setaf 4 
+      if [ `expr
