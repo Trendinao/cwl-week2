@@ -172,4 +172,8 @@ print_d_icon(){                                                       #print dir
       fi
     else
       tput setaf 4 
-      if [ `expr
+      if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                   #if selected
+      then
+        tput rev
+      fi
+  
