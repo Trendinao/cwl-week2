@@ -176,4 +176,8 @@ print_d_icon(){                                                       #print dir
       then
         tput rev
       fi
-  
+      echo '  -----'  
+      tput cup `expr $py + 1` $px
+      echo '--    -'
+      tput cup `expr $py + 2` $px
+      ec
