@@ -183,4 +183,7 @@ print_d_icon(){                                                       #print dir
       echo '-  D  -'
       tput cup `expr $py + 3` $px
       echo '-------'
-      tput cup `expr $py
+      tput cup `expr $py + 4` $px
+      echo `stat -c %n ${a_list[$i+$scroll*5]}` | cut -b -10
+      tput setaf 7
+      if [ `expr $py + 4
