@@ -194,4 +194,9 @@ print_d_icon(){                                                       #print dir
   fi
 }
 
-print_o_i
+print_o_icon(){
+  if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                       #if selected
+  then
+    tput rev
+  fi
+  echo
