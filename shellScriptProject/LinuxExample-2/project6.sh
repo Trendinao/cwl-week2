@@ -204,4 +204,7 @@ print_o_icon(){
   echo '-     -'
   tput cup `expr $py + 2` $px
   echo '-  F  -'
-  tput cup `e
+  tput cup `expr $py + 3` $px
+  echo '-------'
+  tput cup `expr $py + 4` $px
+  echo `stat -c %n ${a_list[$i+$scroll*5]}`
