@@ -199,4 +199,9 @@ print_o_icon(){
   then
     tput rev
   fi
-  echo
+  echo '-------'
+  tput cup `expr $py + 1` $px
+  echo '-     -'
+  tput cup `expr $py + 2` $px
+  echo '-  F  -'
+  tput cup `e
