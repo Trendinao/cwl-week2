@@ -207,4 +207,7 @@ print_o_icon(){
   tput cup `expr $py + 3` $px
   echo '-------'
   tput cup `expr $py + 4` $px
-  echo `stat -c %n ${a_list[$i+$scroll*5]}`
+  echo `stat -c %n ${a_list[$i+$scroll*5]}` | cut -b -10
+  if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                       #if selected
+  then
+    tput sgr
