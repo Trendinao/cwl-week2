@@ -210,4 +210,8 @@ print_o_icon(){
   echo `stat -c %n ${a_list[$i+$scroll*5]}` | cut -b -10
   if [ `expr $py + 4` = $cy ] && [ $px == $cx ]                       #if selected
   then
-    tput sgr
+    tput sgr0
+  fi
+}
+
+print_x_icon(){                                                       #print excutive file ico
