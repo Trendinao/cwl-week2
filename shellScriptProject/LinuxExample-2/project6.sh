@@ -214,4 +214,10 @@ print_o_icon(){
   fi
 }
 
-print_x_icon(){                                                       #print excutive file ico
+print_x_icon(){                                                       #print excutive file icon / yellow color
+  tput setaf 1
+  print_o_icon
+  tput setaf 7
+}
+
+print_s_icon(){                         
