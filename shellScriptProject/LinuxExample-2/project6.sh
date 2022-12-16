@@ -220,4 +220,7 @@ print_x_icon(){                                                       #print exc
   tput setaf 7
 }
 
-print_s_icon(){                         
+print_s_icon(){                                                       #print special file icon / green color
+  tput setaf 2
+  print_o_icon
+  tput setaf 7
