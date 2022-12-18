@@ -224,3 +224,7 @@ print_s_icon(){                                                       #print spe
   tput setaf 2
   print_o_icon
   tput setaf 7
+}
+
+print_icon(){                                                         #print icon
+  px=23                                        
