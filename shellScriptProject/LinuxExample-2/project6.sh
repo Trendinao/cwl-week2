@@ -232,4 +232,7 @@ print_icon(){                                                         #print ico
 
   for ((i=0 ; i<25 ; i++))
   do
-    if [ "${a_list[$i+$scroll*5]}" = "
+    if [ "${a_list[$i+$scroll*5]}" = "$NULL" ]                        #if file number < 25, don't print reaminder icon
+    then
+      break
+    fi
