@@ -227,4 +227,9 @@ print_s_icon(){                                                       #print spe
 }
 
 print_icon(){                                                         #print icon
-  px=23                                        
+  px=23                                                              
+  py=1
+
+  for ((i=0 ; i<25 ; i++))
+  do
+    if [ "${a_list[$i+$scroll*5]}" = "
