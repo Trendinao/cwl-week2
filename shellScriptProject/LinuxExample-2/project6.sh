@@ -238,4 +238,6 @@ print_icon(){                                                         #print ico
     fi
     
     tput cup $py $px                                                  #adjust x, y
-    if [ -d ${a_l
+    if [ -d ${a_list[$i+$scroll*5]} ]                                 #if f_list is directory 
+    then
+      print_d_icon
