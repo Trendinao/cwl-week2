@@ -236,3 +236,6 @@ print_icon(){                                                         #print ico
     then
       break
     fi
+    
+    tput cup $py $px                                                  #adjust x, y
+    if [ -d ${a_l
