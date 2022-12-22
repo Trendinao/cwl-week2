@@ -241,3 +241,6 @@ print_icon(){                                                         #print ico
     if [ -d ${a_list[$i+$scroll*5]} ]                                 #if f_list is directory 
     then
       print_d_icon
+    elif [ -f ${a_list[$i+$scroll*5]} ]                               #if f_list is file
+    then
+      i
