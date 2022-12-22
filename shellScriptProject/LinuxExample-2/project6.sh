@@ -243,4 +243,6 @@ print_icon(){                                                         #print ico
       print_d_icon
     elif [ -f ${a_list[$i+$scroll*5]} ]                               #if f_list is file
     then
-      i
+      if [ -x ${a_list[$i+$scroll*5]} ]                               #if f_list is excutive file
+      then
+     
