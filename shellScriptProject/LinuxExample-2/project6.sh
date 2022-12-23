@@ -245,4 +245,5 @@ print_icon(){                                                         #print ico
     then
       if [ -x ${a_list[$i+$scroll*5]} ]                               #if f_list is excutive file
       then
-     
+        print_x_icon
+      else                                                            #if f_list is ordin
