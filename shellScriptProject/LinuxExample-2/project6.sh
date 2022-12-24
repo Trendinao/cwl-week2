@@ -250,4 +250,9 @@ print_icon(){                                                         #print ico
         print_o_icon
       fi
     else
-      print_s_icon                                                    #if 
+      print_s_icon                                                    #if f_list is special file
+    fi
+    
+    px=`expr $px + $ax`                                               #change x
+
+ 
