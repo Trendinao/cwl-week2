@@ -255,4 +255,6 @@ print_icon(){                                                         #print ico
     
     px=`expr $px + $ax`                                               #change x
 
- 
+    if [ $px -ge $width ]                                             #if x over width
+    then
+      px=23             
