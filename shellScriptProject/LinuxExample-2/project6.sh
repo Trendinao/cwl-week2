@@ -258,4 +258,8 @@ print_icon(){                                                         #print ico
     if [ $px -ge $width ]                                             #if x over width
     then
       px=23                                                           #reset x
-      py=`expr $py + $ay`                                    
+      py=`expr $py + $ay`                                             #next icon line
+    elif [ $py -ge $length ]                                          #if y over length
+    then
+      break
+    fi
