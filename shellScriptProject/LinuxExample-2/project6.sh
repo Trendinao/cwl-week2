@@ -269,3 +269,11 @@ print_icon(){                                                         #print ico
 
 copy(){                                                               #copy 
   a_c[$ic]=`realpath -e ${a_list[$I]}`
+  if [ $ic -ge 3 ]
+  then
+    a_c[0]=${a_c[1]}
+    a_c[1]=${a_c[2]}
+    a_c[2]=${a_c[3]}
+    ic=3
+  fi
+  ic=$(( $ic
