@@ -263,3 +263,9 @@ print_icon(){                                                         #print ico
     then
       break
     fi
+
+  done
+}
+
+copy(){                                                               #copy 
+  a_c[$ic]=`realpath -e ${a_list[$I]}`
