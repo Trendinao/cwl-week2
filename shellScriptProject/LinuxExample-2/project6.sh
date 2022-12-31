@@ -276,4 +276,9 @@ copy(){                                                               #copy
     a_c[2]=${a_c[3]}
     ic=3
   fi
-  ic=$(( $ic
+  ic=$(( $ic + 1 ))
+}
+
+move(){                                                               #move
+  a_m[$im]=`realpath -e ${a_list[$I]}`
+  if [ 
