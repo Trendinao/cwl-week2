@@ -281,4 +281,13 @@ copy(){                                                               #copy
 
 move(){                                                               #move
   a_m[$im]=`realpath -e ${a_list[$I]}`
-  if [ 
+  if [ $im -ge 3 ]
+  then
+    a_m[0]=${a_m[1]}
+    a_m[1]=${a_m[2]}
+    a_m[2]=${a_m[3]}
+    im=3
+  fi
+  im=$(( $im + 1 ))
+}
+
