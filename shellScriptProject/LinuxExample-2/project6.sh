@@ -293,4 +293,6 @@ move(){                                                               #move
 
 cursoring(){                                                          #impement cursor
   set_base
-  cx=23                      
+  cx=23                                                               #set cursor x, y
+  cy=5
+  kb_hit=0                                               
