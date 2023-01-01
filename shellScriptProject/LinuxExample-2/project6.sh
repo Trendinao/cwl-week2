@@ -291,3 +291,6 @@ move(){                                                               #move
   im=$(( $im + 1 ))
 }
 
+cursoring(){                                                          #impement cursor
+  set_base
+  cx=23                      
