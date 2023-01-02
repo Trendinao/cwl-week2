@@ -295,4 +295,5 @@ cursoring(){                                                          #impement 
   set_base
   cx=23                                                               #set cursor x, y
   cy=5
-  kb_hit=0                                               
+  kb_hit=0                                                            #key board hit 
+  declare -i scroll=0                                                 #sc
