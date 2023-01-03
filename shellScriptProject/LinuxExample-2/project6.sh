@@ -296,4 +296,6 @@ cursoring(){                                                          #impement 
   cx=23                                                               #set cursor x, y
   cy=5
   kb_hit=0                                                            #key board hit 
-  declare -i scroll=0                                                 #sc
+  declare -i scroll=0                                                 #scroll
+  declare -i I=0                                                      #file index
+  declare -i ic=0                           
