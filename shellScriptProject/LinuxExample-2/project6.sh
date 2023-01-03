@@ -298,4 +298,5 @@ cursoring(){                                                          #impement 
   kb_hit=0                                                            #key board hit 
   declare -i scroll=0                                                 #scroll
   declare -i I=0                                                      #file index
-  declare -i ic=0                           
+  declare -i ic=0                                                     #index for copy
+  declare -i im=0                                            
