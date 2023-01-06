@@ -299,4 +299,11 @@ cursoring(){                                                          #impement 
   declare -i scroll=0                                                 #scroll
   declare -i I=0                                                      #file index
   declare -i ic=0                                                     #index for copy
-  declare -i im=0                                            
+  declare -i im=0                                                     #index for move
+  while [ 1 ]
+  do
+    make_frame
+    print_1st_inform
+    print_4th_inform
+    print_icon
+    
