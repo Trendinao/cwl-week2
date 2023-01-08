@@ -306,4 +306,7 @@ cursoring(){                                                          #impement 
     print_1st_inform
     print_4th_inform
     print_icon
+    print_3rd_inform
     
+    read -sn 1 kb_hit
+    if [ "$kb_hit" = "A" ]                                          
