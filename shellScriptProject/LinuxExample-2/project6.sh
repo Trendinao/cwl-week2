@@ -309,4 +309,8 @@ cursoring(){                                                          #impement 
     print_3rd_inform
     
     read -sn 1 kb_hit
-    if [ "$kb_hit" = "A" ]                                          
+    if [ "$kb_hit" = "A" ]                                            # hit up button
+    then
+      cy=`expr $cy - $ay`
+      I=`expr $I - 5`
+    elif [ "$kb_hit" = 
