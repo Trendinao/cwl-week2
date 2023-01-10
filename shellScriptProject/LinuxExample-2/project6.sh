@@ -316,4 +316,7 @@ cursoring(){                                                          #impement 
     elif [ "$kb_hit" = "B" ]                                          # hit down button
     then
       cy=`expr $cy + $ay`
-      I=`expr $I 
+      I=`expr $I + 5`
+    elif [ "$kb_hit" = "C" ]                                          # hit right button
+    then
+      cx=`expr $cx +
