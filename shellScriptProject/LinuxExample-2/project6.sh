@@ -313,4 +313,7 @@ cursoring(){                                                          #impement 
     then
       cy=`expr $cy - $ay`
       I=`expr $I - 5`
-    elif [ "$kb_hit" = 
+    elif [ "$kb_hit" = "B" ]                                          # hit down button
+    then
+      cy=`expr $cy + $ay`
+      I=`expr $I 
