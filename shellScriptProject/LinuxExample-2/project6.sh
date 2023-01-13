@@ -321,4 +321,8 @@ cursoring(){                                                          #impement 
     then
       cx=`expr $cx + $ax`
       I=`expr $I + 1`
-    elif [ "$kb_hit" = "D" ]                                     
+    elif [ "$kb_hit" = "D" ]                                          # hit left button
+    then
+      cx=`expr $cx - $ax`
+      I=`expr $I - 1`
+    elif [ "$kb_hit" = "" 
