@@ -327,4 +327,7 @@ cursoring(){                                                          #impement 
       I=`expr $I - 1`
     elif [ "$kb_hit" = "" ]                                           #hit space bar
     then
-      if [ -d ${a_list[$I]} ]    
+      if [ -d ${a_list[$I]} ]                                         #if directory
+      then
+        cd `realpath -e ${a_list[$I]}`
+        cursorin
