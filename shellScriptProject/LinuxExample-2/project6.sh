@@ -325,4 +325,6 @@ cursoring(){                                                          #impement 
     then
       cx=`expr $cx - $ax`
       I=`expr $I - 1`
-    elif [ "$kb_hit" = "" 
+    elif [ "$kb_hit" = "" ]                                           #hit space bar
+    then
+      if [ -d ${a_list[$I]} ]    
