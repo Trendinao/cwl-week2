@@ -330,4 +330,8 @@ cursoring(){                                                          #impement 
       if [ -d ${a_list[$I]} ]                                         #if directory
       then
         cd `realpath -e ${a_list[$I]}`
-        cursorin
+        cursoring
+      elif [ -x ${a_list[$I]} ]                                       #if excutive file
+      then
+        clear
+        ./
