@@ -334,4 +334,6 @@ cursoring(){                                                          #impement 
       elif [ -x ${a_list[$I]} ]                                       #if excutive file
       then
         clear
-        ./
+        ./${a_list[$I]}
+      fi
+    elif [ "$kb_hit" = "c" ]                                          #if wa
