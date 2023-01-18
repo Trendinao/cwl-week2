@@ -336,4 +336,7 @@ cursoring(){                                                          #impement 
         clear
         ./${a_list[$I]}
       fi
-    elif [ "$kb_hit" = "c" ]                                          #if wa
+    elif [ "$kb_hit" = "c" ]                                          #if want to copy
+    then
+      copy
+    elif [ "$kb_hit" = "p" ]                                          #if want to past
