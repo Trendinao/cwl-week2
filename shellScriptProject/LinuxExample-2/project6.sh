@@ -339,4 +339,12 @@ cursoring(){                                                          #impement 
     elif [ "$kb_hit" = "c" ]                                          #if want to copy
     then
       copy
-    elif [ "$kb_hit" = "p" ]                                          #if want to past
+    elif [ "$kb_hit" = "p" ]                                          #if want to paste
+    then
+      for((j=0; j<3; j++))
+      do
+        if [ "${a_c[$j]}" = "$NULL" ]
+	then
+	  break
+	fi
+  
