@@ -347,4 +347,6 @@ cursoring(){                                                          #impement 
 	then
 	  break
 	fi
-  
+        cp ${a_c[$j]} $PWD
+      done
+    elif [ "$kb_hit" = "m" ]                                         
