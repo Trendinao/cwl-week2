@@ -349,4 +349,7 @@ cursoring(){                                                          #impement 
 	fi
         cp ${a_c[$j]} $PWD
       done
-    elif [ "$kb_hit" = "m" ]                                         
+    elif [ "$kb_hit" = "m" ]                                          #if want to move
+    then
+      move
+    elif [ "$kb_hit" = "v" ]                                   
