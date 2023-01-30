@@ -356,4 +356,10 @@ cursoring(){                                                          #impement 
     then
       for((j=0; j<3; j++))
       do
-        if [ "${a_m[$j]}" = "$NULL
+        if [ "${a_m[$j]}" = "$NULL" ]
+	then
+	  break
+	fi
+        cp ${a_m[$j]} $PWD
+      done
+    elif [ "$kb_hit" = "q" ]                              
