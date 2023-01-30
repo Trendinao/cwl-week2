@@ -352,4 +352,8 @@ cursoring(){                                                          #impement 
     elif [ "$kb_hit" = "m" ]                                          #if want to move
     then
       move
-    elif [ "$kb_hit" = "v" ]                                   
+    elif [ "$kb_hit" = "v" ]                                          #if want to move
+    then
+      for((j=0; j<3; j++))
+      do
+        if [ "${a_m[$j]}" = "$NULL
