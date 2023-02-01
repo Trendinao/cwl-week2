@@ -362,4 +362,11 @@ cursoring(){                                                          #impement 
 	fi
         cp ${a_m[$j]} $PWD
       done
-    elif [ "$kb_hit" = "q" ]                              
+    elif [ "$kb_hit" = "q" ]                                          #if hit q button, break
+    then
+      break
+    else
+      continue
+    fi
+
+    if [ $cx -le
