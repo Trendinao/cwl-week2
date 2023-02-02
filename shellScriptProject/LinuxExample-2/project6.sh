@@ -371,4 +371,6 @@ cursoring(){                                                          #impement 
 
     if [ $cx -le 20 ]                                                 #if cursor is out of 2nd frame's left line
     then
-      cx=`e
+      cx=`expr $cx + $ax`
+      I=`expr $I + 1`
+    elif [ $cx -ge $width ]                                           #if cursor 
