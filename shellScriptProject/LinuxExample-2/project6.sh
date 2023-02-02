@@ -369,4 +369,6 @@ cursoring(){                                                          #impement 
       continue
     fi
 
-    if [ $cx -le
+    if [ $cx -le 20 ]                                                 #if cursor is out of 2nd frame's left line
+    then
+      cx=`e
