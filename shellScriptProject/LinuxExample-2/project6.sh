@@ -377,4 +377,6 @@ cursoring(){                                                          #impement 
     then
       cx=`expr $cx - $ax`
       I=`expr $I - 1`
-    elif [ $cy -le 0 ]                      
+    elif [ $cy -le 0 ]                                                #if cursor is out of 2nd frame's top line
+    then
+      cy=`expr $cy + $a
