@@ -373,4 +373,8 @@ cursoring(){                                                          #impement 
     then
       cx=`expr $cx + $ax`
       I=`expr $I + 1`
-    elif [ $cx -ge $width ]                                           #if cursor 
+    elif [ $cx -ge $width ]                                           #if cursor is out of 2nd frame's right line
+    then
+      cx=`expr $cx - $ax`
+      I=`expr $I - 1`
+    elif [ $cy -le 0 ]                      
