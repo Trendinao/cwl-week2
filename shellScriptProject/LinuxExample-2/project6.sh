@@ -379,4 +379,8 @@ cursoring(){                                                          #impement 
       I=`expr $I - 1`
     elif [ $cy -le 0 ]                                                #if cursor is out of 2nd frame's top line
     then
-      cy=`expr $cy + $a
+      cy=`expr $cy + $ay`
+      I=`expr $I + 5`
+      if [ $scroll -ge 1 ]                                            
+      then
+  
