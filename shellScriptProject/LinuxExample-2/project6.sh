@@ -383,4 +383,6 @@ cursoring(){                                                          #impement 
       I=`expr $I + 5`
       if [ $scroll -ge 1 ]                                            
       then
-  
+        scroll=`expr $scroll - 1`
+      fi
+    elif [ $cy -ge $length ]                                    
