@@ -391,4 +391,8 @@ cursoring(){                                                          #impement 
       I=`expr $I - 5`
       scroll=`expr $scroll + 1`
     fi    
-    tput cup $cy $cx                                                  #set cursor ne
+    tput cup $cy $cx                                                  #set cursor next place
+  done
+}
+
+cursoring
