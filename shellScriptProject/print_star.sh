@@ -5,4 +5,6 @@
 
 #function definnition
 
-p
+print_tri()                                         #print triangle function
+{
+ for ((i=1; i<=4; i++))         
