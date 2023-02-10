@@ -11,3 +11,7 @@ print_tri()                                         #print triangle function
  do 
     for ((j=4 - $i; j>0; j--))                      #j=3~1 
     do
+      printf " "                                    #print null
+    done 
+
+    for ((k=0; k<$i \* 2 - 1; k++))   
