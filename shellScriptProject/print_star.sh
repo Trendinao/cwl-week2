@@ -14,4 +14,9 @@ print_tri()                                         #print triangle function
       printf " "                                    #print null
     done 
 
-    for ((k=0; k<$i \* 2 - 1; k++))   
+    for ((k=0; k<$i \* 2 - 1; k++))                 #k=0,2,4...
+    do
+      printf '*'                                    #print *
+    done
+
+    printf "\n"             
