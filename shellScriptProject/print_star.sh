@@ -19,4 +19,9 @@ print_tri()                                         #print triangle function
       printf '*'                                    #print *
     done
 
-    printf "\n"             
+    printf "\n"                                     #print \n
+ done 
+ break;
+}
+
+print_squ()                                         #print square
