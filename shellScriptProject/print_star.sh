@@ -25,3 +25,7 @@ print_tri()                                         #print triangle function
 }
 
 print_squ()                                         #print square
+{
+ for ((i=1; i<=4; i++))                             #i=1~5
+ do 
+    for ((j=1; j<=6; j++))                         
