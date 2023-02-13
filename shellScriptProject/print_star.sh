@@ -32,4 +32,9 @@ print_squ()                                         #print square
     do 
       printf '*'                                    #print *
     done
-    printf "\n"                   
+    printf "\n"                                     #print \n
+ done
+ break;
+}
+
+print_dia()                                       
