@@ -28,4 +28,8 @@ print_squ()                                         #print square
 {
  for ((i=1; i<=4; i++))                             #i=1~5
  do 
-    for ((j=1; j<=6; j++))                         
+    for ((j=1; j<=6; j++))                          #j=1~7
+    do 
+      printf '*'                                    #print *
+    done
+    printf "\n"                   
