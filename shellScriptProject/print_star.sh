@@ -37,4 +37,8 @@ print_squ()                                         #print square
  break;
 }
 
-print_dia()                                       
+print_dia()                                         #print diamond
+{
+ for ((i=1; i<=5; i++))                             #i=1~5
+ do 
+    if [ $i -le 3 ]                     
