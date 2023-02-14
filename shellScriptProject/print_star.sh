@@ -41,4 +41,8 @@ print_dia()                                         #print diamond
 {
  for ((i=1; i<=5; i++))                             #i=1~5
  do 
-    if [ $i -le 3 ]                     
+    if [ $i -le 3 ]                                   #if i<=3
+    then
+      for ((j=4 - $i; j>0; j--))                    #j=4~1
+      do 
+        printf "
