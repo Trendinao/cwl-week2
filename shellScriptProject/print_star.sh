@@ -45,4 +45,7 @@ print_dia()                                         #print diamond
     then
       for ((j=4 - $i; j>0; j--))                    #j=4~1
       do 
-        printf "
+        printf " "                                  #print null
+      done
+    
+      for ((k=0; k<$i \*2 - 1; k++))      
