@@ -51,4 +51,6 @@ print_dia()                                         #print diamond
       for ((k=0; k<$i \*2 - 1; k++))                #k=0,2,4...
       do 
         printf '*'                                  #print *
-      d
+      done
+    else                                            #if i>3
+      for ((j=3; j<=$i; j++))                       #j=3~5
