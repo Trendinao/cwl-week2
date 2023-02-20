@@ -54,3 +54,10 @@ print_dia()                                         #print diamond
       done
     else                                            #if i>3
       for ((j=3; j<=$i; j++))                       #j=3~5
+      do 
+        printf " "
+      done
+
+      for ((k=$i; k<11 - $i; k++))                  #k=4~6
+      do
+      
