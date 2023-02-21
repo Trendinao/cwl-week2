@@ -60,4 +60,14 @@ print_dia()                                         #print diamond
 
       for ((k=$i; k<11 - $i; k++))                  #k=4~6
       do
-      
+        printf '*'
+      done
+    fi
+    printf "\n"
+ done
+ break;
+}
+
+
+
+select selected_menu in "triangle" "square" "diamond"   #a
