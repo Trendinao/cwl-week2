@@ -70,4 +70,7 @@ print_dia()                                         #print diamond
 
 
 
-select selected_menu in "triangle" "square" "diamond"   #a
+select selected_menu in "triangle" "square" "diamond"   #ask menu   
+do
+  case "$selected_menu" in                              #which menu
+  triangle) print_tri;;                
