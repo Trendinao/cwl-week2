@@ -75,3 +75,5 @@ do
   case "$selected_menu" in                              #which menu
   triangle) print_tri;;                                 #1-print_tri
   square) print_squ;;                                   #2-print_squ
+  diamond) print_dia;;                                  #3-print_dia
+  esac                                  
