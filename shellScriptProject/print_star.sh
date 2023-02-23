@@ -73,4 +73,5 @@ print_dia()                                         #print diamond
 select selected_menu in "triangle" "square" "diamond"   #ask menu   
 do
   case "$selected_menu" in                              #which menu
-  triangle) print_tri;;                
+  triangle) print_tri;;                                 #1-print_tri
+  square) print_squ;;                                   #2-print_squ
